@@ -1,1 +1,4 @@
-/home/peanut/.zsh_plugins.txt
+# zsh Plugins
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
