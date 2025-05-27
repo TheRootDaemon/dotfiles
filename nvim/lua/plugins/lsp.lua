@@ -17,6 +17,8 @@ return {
     config = function()
         local autoformat_filetypes = {
             "lua",
+            "python",
+            "json",
         }
         -- Create a keymap for vim.lsp.buf.implementation
         vim.api.nvim_create_autocmd("LspAttach", {
@@ -99,6 +101,8 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "ts_ls",
+                "pyright",
+                "bashls",
             },
             handlers = {
                 -- this first function is the "default handler"
