@@ -43,6 +43,7 @@ vim.g.have_nerd_font = true
 -- <leader>e to open netrw file explorer
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 3
 
 -- Clear search highlight with <Esc>
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
