@@ -18,6 +18,7 @@ alias xnew="tmux new -s"
 alias xconnect="tmux attach -t"
 alias xkill="tmux kill-server"
 alias sqlite="sqlite3"
+alias binact="source bin/activate"
 
 # Antidote configs (Plugin manager)
 zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
@@ -35,8 +36,3 @@ source ${zsh_plugins}.zsh
 
 # Startup
 eval "$(starship init zsh)"
-echo ""
-nerdfetch
-echo ""
-echo ""
-
