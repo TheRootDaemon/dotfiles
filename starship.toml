@@ -1,9 +1,7 @@
 add_newline = false
 
 format = """
- $username\
-$hostname\
-$directory\
+ $directory\
 $git_branch\
 $git_state\
 $git_status\
