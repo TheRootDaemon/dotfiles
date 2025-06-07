@@ -36,3 +36,4 @@ source ${zsh_plugins}.zsh
 
 # Startup
 eval "$(starship init zsh)"
+echo ""
