@@ -19,6 +19,7 @@ alias xconnect="tmux attach -t"
 alias xkill="tmux kill-server"
 alias sqlite="sqlite3"
 alias binact="source bin/activate"
+alias update="sudo pacman -Syu && yay -Syu && flatpak update"
 
 # Antidote configs (Plugin manager)
 zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
