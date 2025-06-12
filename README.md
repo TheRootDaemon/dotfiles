@@ -7,6 +7,7 @@ This repo contains configs for,
 - Ghostty
 - zsh
 - tmux
+- yazi
 
 The following command installs the plugin manager for zsh
 ```bash
