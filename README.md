@@ -23,7 +23,18 @@ Also i used the $HOME/.config format
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
-Note the the commands are specific for Arch Linux
+I use symbolic links to point dotfile in my git repo, Since it is very friendly to lazy people
+```bash
+ln -s <orginal dotfiles> <where to place the dotfiles>
+```
 
+For example, If I wanted to point to some of my dotfiles in my repo I will do This
+```bash
+ln -s ~/dotfiles/nvim ~/.config/nvim
+ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
+ln -s ~/dotfiles/ghostty ~/.config/ghostty
+```
+
+That will create a symbolic link for me Since I am Lazy ...
 I might add a few more in future ......
 
