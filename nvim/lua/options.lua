@@ -46,6 +46,7 @@ vim.g.netrw_banner = 0
 vim.g.netrw_liststyle = 3
 
 -- Clear search highlight with <Esc>
+vim.keymap.set("n", "<leader>f", ":%s/")
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Move selected lines up and down in visual mode
