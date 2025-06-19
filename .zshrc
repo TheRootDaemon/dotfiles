@@ -17,7 +17,7 @@ alias vim="nvim"
 alias xnew="tmux new -s"
 alias xconnect="tmux attach -t"
 alias xkill="tmux kill-server"
-alias sqlite="sqlite3"
+alias sql="sqlite3"
 alias binact="source bin/activate"
 alias update="sudo pacman -Syu && yay -Syu && flatpak update"
 
