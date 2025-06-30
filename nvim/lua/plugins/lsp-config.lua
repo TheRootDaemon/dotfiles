@@ -15,7 +15,7 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "pyright",
-                "tsserver",
+                "ts_ls",
                 "html",
                 "cssls",
                 "jsonls",
