@@ -15,7 +15,7 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "pyright",
-                "ts_ls",
+                "tsserver",
                 "html",
                 "cssls",
                 "jsonls",
@@ -27,45 +27,40 @@ return {
             },
         })
 
-        local capabilities = require("cmp_nvim_lsp").default_capabilities()
+        local cmp_nvim_lsp = require("cmp_nvim_lsp")
+        local capabilities = vim.tbl_deep_extend(
+            "force",
+            {},
+            vim.lsp.protocol.make_client_capabilities(),
+            cmp_nvim_lsp.default_capabilities()
+        )
 
-        local function setup_keymaps(bufnr)
-            local opts = { buffer = bufnr }
-            local map = vim.keymap.set
-            map("n", "K", vim.lsp.buf.hover, opts)
-            map("n", "gd", vim.lsp.buf.definition, opts)
-            map("n", "gD", vim.lsp.buf.declaration, opts)
-            map("n", "gi", vim.lsp.buf.implementation, opts)
-            map("n", "go", vim.lsp.buf.type_definition, opts)
-            map("n", "gr", vim.lsp.buf.references, opts)
-            map("n", "gs", vim.lsp.buf.signature_help, opts)
-            map("n", "gl", vim.diagnostic.open_float, opts)
-            map("n", "<F2>", vim.lsp.buf.rename, opts)
-            map({ "n", "x" }, "<F3>", function()
+        local on_attach = function(_, bufnr)
+            local opts = { buffer = bufnr, silent = true, noremap = true }
+
+            vim.keymap.set("n", "K", vim.lsp.buf.hover, vim.tbl_extend("force", opts, { desc = "Hover" }))
+            vim.keymap.set(
+                "n",
+                "gd",
+                vim.lsp.buf.definition,
+                vim.tbl_extend("force", opts, { desc = "Go to Definition" })
+            )
+            vim.keymap.set(
+                "n",
+                "gr",
+                vim.lsp.buf.references,
+                vim.tbl_extend("force", opts, { desc = "Go to References" })
+            )
+            vim.keymap.set(
+                "n",
+                "<leader>ca",
+                vim.lsp.buf.code_action,
+                vim.tbl_extend("force", opts, { desc = "Code Action" })
+            )
+            vim.keymap.set("n", "<leader>F", function()
                 vim.lsp.buf.format({ async = true })
-            end, opts)
-            map("n", "<F4>", vim.lsp.buf.code_action, opts)
+            end, vim.tbl_extend("force", opts, { desc = "Format" }))
         end
-
-        vim.api.nvim_create_autocmd("LspAttach", {
-            callback = function(event)
-                setup_keymaps(event.buf)
-
-                local client = vim.lsp.get_client_by_id(event.data.client_id)
-                if client and vim.tbl_contains({ "lua", "python", "json" }, vim.bo.filetype) then
-                    vim.api.nvim_create_autocmd("BufWritePre", {
-                        buffer = event.buf,
-                        callback = function()
-                            vim.lsp.buf.format({
-                                bufnr = event.buf,
-                                id = client.id,
-                                formatting_options = { tabSize = 4, insertSpaces = true },
-                            })
-                        end,
-                    })
-                end
-            end,
-        })
 
         vim.diagnostic.config({
             virtual_text = true,
@@ -90,6 +85,7 @@ return {
             lua_ls = function()
                 lspconfig.lua_ls.setup({
                     capabilities = capabilities,
+                    on_attach = on_attach,
                     settings = {
                         Lua = {
                             runtime = { version = "LuaJIT" },
@@ -101,7 +97,10 @@ return {
             end,
 
             _default = function(server_name)
-                lspconfig[server_name].setup({ capabilities = capabilities })
+                lspconfig[server_name].setup({
+                    capabilities = capabilities,
+                    on_attach = on_attach,
+                })
             end,
         }
 

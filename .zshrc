@@ -20,6 +20,7 @@ alias xkill="tmux kill-server"
 alias sql="sqlite3"
 alias binact="source bin/activate"
 alias update="sudo pacman -Syu && yay -Syu && flatpak update"
+alias docker="sudo docker"
 
 # Antidote configs (Plugin manager)
 zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
@@ -38,3 +39,5 @@ source ${zsh_plugins}.zsh
 # Startup
 eval "$(starship init zsh)"
 echo ""
+
+. "$HOME/.local/bin/env"

@@ -4,10 +4,25 @@ return {
         local null_ls = require("null-ls")
         null_ls.setup({
             sources = {
+                -- Formatting for Lua files
                 null_ls.builtins.formatting.stylua,
+
+                -- Formatting for Python files
                 null_ls.builtins.formatting.black,
-                null_ls.builtins.formatting.prettier,
+                -- Sorting and organizing Python import statements
                 null_ls.builtins.formatting.isort,
+
+                -- Formatting for JavaScript, TypeScript, JSON, CSS, HTML, etc.
+                null_ls.builtins.formatting.prettier,
+
+                -- Formatting and organizing imports for Go files
+                null_ls.builtins.formatting.goimports,
+
+                -- Formatting for Java files
+                null_ls.builtins.formatting.google_java_format,
+
+                -- Formatting for C/C++ files
+                null_ls.builtins.formatting.clang_format,
             },
         })
     end,
