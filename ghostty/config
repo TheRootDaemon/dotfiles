@@ -12,3 +12,4 @@ window-width = 128
 
 font-family = "Caskaydia Cove Nerd Font"
 font-size = 13
+font-feature = "-calt, -liga, -dlig"
