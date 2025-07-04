@@ -33,11 +33,11 @@ return {
             }
 
             dashboard.section.buttons.val = {
-                dashboard.button("n", "  New File", ":ene <BAR> startinsert <CR>"),
-                dashboard.button("l", "󰒲  Lazy", ":Lazy<CR>"),
-                dashboard.button("u", "  Lazy Update", ":Lazy update<CR>"),
-                dashboard.button("s", "  Lazy Sync", ":Lazy sync<CR>"),
-                dashboard.button("q", "  Quit", ":qa<CR>"),
+                dashboard.button("1", "  New File", ":ene <BAR> startinsert <CR>"),
+                dashboard.button("2", "󰒲  Lazy", ":Lazy<CR>"),
+                dashboard.button("3", "  Lazy Update", ":Lazy update<CR>"),
+                dashboard.button("4", "  Lazy Sync", ":Lazy sync<CR>"),
+                dashboard.button("5", "  Quit", ":qa<CR>"),
             }
             for _, button in ipairs(dashboard.section.buttons.val) do
                 button.opts.hl = "AlphaButtons"
