@@ -18,9 +18,6 @@ return {
                 -- Formatting and organizing imports for Go files
                 null_ls.builtins.formatting.goimports,
 
-                -- Formatting for Java files
-                null_ls.builtins.formatting.google_java_format,
-
                 -- Formatting for C/C++ files
                 null_ls.builtins.formatting.clang_format,
             },

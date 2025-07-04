@@ -23,7 +23,6 @@ return {
                 "bashls",
                 "gopls",
                 "clangd",
-                "jdtls",
             },
         })
 
