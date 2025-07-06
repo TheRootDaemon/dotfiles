@@ -1,8 +1,8 @@
 -- Use system clipboard for all operations
 vim.opt.clipboard = "unnamedplus"
 
--- Use block cursor in all modes (useful in terminal)
-vim.opt.guicursor = ""
+-- Blocky cursor all the time
+vim.o.guicursor = ""
 
 -- Show line numbers
 vim.opt.number = true
@@ -13,7 +13,6 @@ vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
-vim.opt.autoindent = true
 vim.opt.smarttab = true
 
 -- Search configs
@@ -58,3 +57,11 @@ vim.keymap.set("n", "<C-h>", "<Cmd>TmuxNavigateLeft<CR>")
 vim.keymap.set("n", "<C-j>", "<Cmd>TmuxNavigateDown<CR>")
 vim.keymap.set("n", "<C-k>", "<Cmd>TmuxNavigateUp<CR>")
 vim.keymap.set("n", "<C-l>", "<Cmd>TmuxNavigateRight<CR>")
+
+-- Forcing myself to not use arrow keys
+for _, mode in pairs({ "n", "i", "v" }) do
+    vim.keymap.set(mode, "<Up>", "<Nop>", { noremap = true, silent = true })
+    vim.keymap.set(mode, "<Down>", "<Nop>", { noremap = true, silent = true })
+    vim.keymap.set(mode, "<Left>", "<Nop>", { noremap = true, silent = true })
+    vim.keymap.set(mode, "<Right>", "<Nop>", { noremap = true, silent = true })
+end

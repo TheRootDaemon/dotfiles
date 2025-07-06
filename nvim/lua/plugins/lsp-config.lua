@@ -56,7 +56,7 @@ return {
                 vim.lsp.buf.code_action,
                 vim.tbl_extend("force", opts, { desc = "Code Action" })
             )
-            vim.keymap.set("n", "<leader>F", function()
+            vim.keymap.set("n", "F", function()
                 vim.lsp.buf.format({ async = true })
             end, vim.tbl_extend("force", opts, { desc = "Format" }))
         end

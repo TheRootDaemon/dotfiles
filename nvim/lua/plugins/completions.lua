@@ -47,8 +47,8 @@ return {
             },
             mapping = cmp.mapping.preset.insert({
                 ["<CR>"] = cmp.mapping.confirm({ select = false }),
-                ["<C-f>"] = cmp.mapping.scroll_docs(5),
-                ["<C-u>"] = cmp.mapping.scroll_docs(-5),
+                ["<C-w>"] = cmp.mapping.scroll_docs(5),
+                ["<C-s>"] = cmp.mapping.scroll_docs(-5),
                 ["<C-e>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
                         cmp.abort()

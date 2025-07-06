@@ -1,15 +1,23 @@
-cursor-style = block
+# Cursor configs
+cursor-style = "block"
+cursor-invert-fg-bg = true
+cursor-color = "#ffffff"
 cursor-style-blink = false
-shell-integration-features = no-cursor
 
-theme = catppuccin-mocha
+# Shell Integration 
+shell-integration-features = "no-cursor"
 
+# Theme 
+theme = "catppuccin-mocha"
+
+# Window Appearance 
 window-padding-x = 0
 window-padding-y = 0
 background-opacity = 0.8
-window-height = 42
 window-width = 128
+window-height = 42
 
+# Font Settings 
 font-family = "Caskaydia Cove Nerd Font"
 font-size = 13
 font-feature = "-calt, -liga, -dlig"
