@@ -39,7 +39,7 @@ fi
 source ${zsh_plugins}.zsh
 
 # Startup
-eval eval "$(oh-my-posh init zsh --config ~/dotfiles/catppuccin.omp.json)"
+eval eval "$(oh-my-posh init zsh --config ~/dotfiles/oh-my-posh.json)"
 echo "
     feat: A new feature
     fix: A bug fix
