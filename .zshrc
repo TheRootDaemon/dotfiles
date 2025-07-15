@@ -1,3 +1,5 @@
+export PATH="$HOME/.local/bin:$PATH"
+
 # History & other configs
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
@@ -37,7 +39,7 @@ fi
 source ${zsh_plugins}.zsh
 
 # Startup
-eval "$(starship init zsh)"
+eval eval "$(oh-my-posh init zsh --config ~/dotfiles/catppuccin.omp.json)"
 echo "
     feat: A new feature
     fix: A bug fix

@@ -13,7 +13,7 @@ theme = "catppuccin-mocha"
 # Window Appearance 
 window-padding-x = 0
 window-padding-y = 0
-background-opacity = 0.8
+background-opacity = 1
 window-width = 128
 window-height = 42
 
