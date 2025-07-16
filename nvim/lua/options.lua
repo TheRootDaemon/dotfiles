@@ -1,3 +1,4 @@
+-- Hides the neovim's cmd line when necessary
 vim.opt.cmdheight = 0
 
 -- Use system clipboard for all operations
