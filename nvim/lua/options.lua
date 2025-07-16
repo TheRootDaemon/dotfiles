@@ -1,3 +1,5 @@
+vim.opt.cmdheight = 0
+
 -- Use system clipboard for all operations
 vim.opt.clipboard = "unnamedplus"
 
@@ -62,8 +64,8 @@ vim.keymap.set("n", "<C-l>", "<Cmd>TmuxNavigateRight<CR>")
 
 -- Forcing myself to not use arrow keys
 for _, mode in pairs({ "n", "i", "v" }) do
-    vim.keymap.set(mode, "<Up>", "<Nop>", { noremap = true, silent = true })
-    vim.keymap.set(mode, "<Down>", "<Nop>", { noremap = true, silent = true })
-    vim.keymap.set(mode, "<Left>", "<Nop>", { noremap = true, silent = true })
-    vim.keymap.set(mode, "<Right>", "<Nop>", { noremap = true, silent = true })
+	vim.keymap.set(mode, "<Up>", "<Nop>", { noremap = true, silent = true })
+	vim.keymap.set(mode, "<Down>", "<Nop>", { noremap = true, silent = true })
+	vim.keymap.set(mode, "<Left>", "<Nop>", { noremap = true, silent = true })
+	vim.keymap.set(mode, "<Right>", "<Nop>", { noremap = true, silent = true })
 end
