@@ -24,6 +24,7 @@ return {
 				"gopls",
 				"clangd",
 				"svelte",
+				"tailwindcss",
 			},
 		})
 
@@ -76,12 +77,7 @@ return {
 				vim.lsp.buf.references,
 				vim.tbl_extend("force", opts, { desc = "Go to References" })
 			)
-			vim.keymap.set(
-				"n",
-				"<leader>ca",
-				vim.lsp.buf.code_action,
-				vim.tbl_extend("force", opts, { desc = "Code Action" })
-			)
+			vim.keymap.set("n", "ca", vim.lsp.buf.code_action, vim.tbl_extend("force", opts, { desc = "Code Action" }))
 		end
 
 		vim.diagnostic.config({
@@ -113,6 +109,34 @@ return {
 							runtime = { version = "LuaJIT" },
 							diagnostics = { globals = { "vim" } },
 							workspace = { library = { vim.env.VIMRUNTIME } },
+						},
+					},
+				})
+			end,
+
+			cssls = function()
+				lspconfig.cssls.setup({
+					capabilities = capabilities,
+					on_attach = on_attach,
+					filetypes = { "css", "scss", "svelte", "less" },
+					settings = {
+						css = {
+							validate = true,
+							lint = {
+								unknownAtRules = "ignore",
+							},
+						},
+						scss = {
+							validate = true,
+							lint = {
+								unknownAtRules = "ignore",
+							},
+						},
+						less = {
+							validate = true,
+							lint = {
+								unknownAtRules = "ignore",
+							},
 						},
 					},
 				})
