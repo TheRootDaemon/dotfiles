@@ -3,5 +3,8 @@
         "vim",
         "server",
         "LazyVim"
+    ],
+    "diagnostics.disable": [
+        "assign-type-mismatch"
     ]
 }

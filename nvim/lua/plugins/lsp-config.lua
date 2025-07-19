@@ -28,6 +28,27 @@ return {
 			},
 		})
 
+		vim.diagnostic.config({
+			virtual_text = true,
+			severity_sort = true,
+			float = {
+				style = "minimal",
+				border = "rounded",
+				header = "",
+				prefix = "",
+			},
+			signs = {
+				text = {
+					[vim.diagnostic.severity.ERROR] = "󰅚",
+					[vim.diagnostic.severity.WARN] = "󰀪",
+					[vim.diagnostic.severity.HINT] = "󰌶",
+					[vim.diagnostic.severity.INFO] = "󰋽",
+				},
+			},
+		})
+
+		require("lspconfig.ui.windows").default_options.border = "rounded"
+
 		local cmp_nvim_lsp = require("cmp_nvim_lsp")
 		local capabilities = vim.tbl_deep_extend(
 			"force",
@@ -43,23 +64,6 @@ return {
 			end,
 			desc = "Format buffer before saving",
 		})
-
-		vim.api.nvim_create_user_command("ToggleFormatOnSave", function()
-			local augroup = vim.api.nvim_get_autogroups({ name = "LspFormatOnSave" })
-			if next(augroup) then
-				vim.api.nvim_del_augroup_by_name("LspFormatOnSave")
-				print("Format on save disabled")
-			else
-				vim.api.nvim_create_autocmd("BufWritePre", {
-					group = vim.api.nvim_create_augroup("LspFormatOnSave", { clear = true }),
-					callback = function()
-						vim.lsp.buf.format({ async = false })
-					end,
-					desc = "Format buffer before saving",
-				})
-				print("Format on save enabled")
-			end
-		end, { desc = "Toggle format on save" })
 
 		local on_attach = function(_, bufnr)
 			local opts = { buffer = bufnr, silent = true, noremap = true }
@@ -79,25 +83,6 @@ return {
 			)
 			vim.keymap.set("n", "ca", vim.lsp.buf.code_action, vim.tbl_extend("force", opts, { desc = "Code Action" }))
 		end
-
-		vim.diagnostic.config({
-			virtual_text = true,
-			severity_sort = true,
-			float = {
-				style = "minimal",
-				border = "rounded",
-				header = "",
-				prefix = "",
-			},
-			signs = {
-				text = {
-					[vim.diagnostic.severity.ERROR] = "✘",
-					[vim.diagnostic.severity.WARN] = "▲",
-					[vim.diagnostic.severity.HINT] = "⚑",
-					[vim.diagnostic.severity.INFO] = "»",
-				},
-			},
-		})
 
 		local servers = {
 			lua_ls = function()
