@@ -41,5 +41,3 @@ source ${zsh_plugins}.zsh
 # Startup
 eval eval "$(oh-my-posh init zsh --config ~/dotfiles/oh-my-posh.json)"
 echo ""
-echo "  Hackathon Kickoff @July 25th 20:30"
-echo ""
