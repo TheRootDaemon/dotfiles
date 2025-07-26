@@ -9,7 +9,7 @@ return {
         local mason = require("mason")
         local mason_lspconfig = require("mason-lspconfig")
 
-        mason.setup()
+        mason.setup({})
 
         mason_lspconfig.setup({
             ensure_installed = {
@@ -26,6 +26,9 @@ return {
                 "svelte",
                 "tailwindcss",
             },
+            automatic_setup = false,
+            automatic_enable = false,
+            handlers = nil,
         })
 
         vim.diagnostic.config({
