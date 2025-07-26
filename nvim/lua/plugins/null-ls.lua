@@ -1,26 +1,27 @@
 return {
-    "nvimtools/none-ls.nvim",
-    config = function()
-        local null_ls = require("null-ls")
-        null_ls.setup({
-            sources = {
-                -- Formatting for Lua files
-                null_ls.builtins.formatting.stylua,
+	"nvimtools/none-ls.nvim",
+	config = function()
+		local null_ls = require("null-ls")
+		null_ls.setup({
+			sources = {
+				-- Formatting for Lua files
+				null_ls.builtins.formatting.stylua,
 
-                -- Formatting for Python files
-                null_ls.builtins.formatting.black,
-                -- Sorting and organizing Python import statements
-                null_ls.builtins.formatting.isort,
+				-- Formatting for Python files
+				null_ls.builtins.formatting.black,
 
-                -- Formatting for JavaScript, TypeScript, JSON, CSS, HTML, etc.
-                null_ls.builtins.formatting.prettier,
+				-- Sorting and organizing Python import statements
+				null_ls.builtins.formatting.isort,
 
-                -- Formatting and organizing imports for Go files
-                null_ls.builtins.formatting.goimports,
+				-- Formatting for JavaScript, TypeScript, JSON, CSS, HTML, etc.
+				null_ls.builtins.formatting.prettier,
 
-                -- Formatting for C/C++ files
-                null_ls.builtins.formatting.clang_format,
-            },
-        })
-    end,
+				-- Formatting and organizing imports for Go files
+				null_ls.builtins.formatting.goimports,
+
+				-- Formatting for C/C++ files
+				null_ls.builtins.formatting.clang_format,
+			},
+		})
+	end,
 }

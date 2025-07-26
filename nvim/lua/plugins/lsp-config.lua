@@ -26,6 +26,7 @@ return {
 				"svelte",
 				"tailwindcss",
 			},
+			automatic_installation = true, -- Optional: auto-install servers
 		})
 
 		vim.diagnostic.config({
@@ -65,7 +66,7 @@ return {
 			desc = "Format buffer before saving",
 		})
 
-		local on_attach = function(_, bufnr)
+		local on_attach = function(client, bufnr)
 			local opts = { buffer = bufnr, silent = true, noremap = true }
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, vim.tbl_extend("force", opts, { desc = "Hover" }))
@@ -84,6 +85,7 @@ return {
 			vim.keymap.set("n", "ca", vim.lsp.buf.code_action, vim.tbl_extend("force", opts, { desc = "Code Action" }))
 		end
 
+		-- Define server configurations
 		local servers = {
 			lua_ls = function()
 				lspconfig.lua_ls.setup({
@@ -152,8 +154,13 @@ return {
 			end,
 		}
 
-		for _, server in ipairs(mason_lspconfig.get_installed_servers()) do
-			(servers[server] or servers._default)(server)
+		-- Iterate over installed servers and configure them
+		local installed_servers = mason_lspconfig.get_installed_servers()
+		for _, server in ipairs(installed_servers) do
+			-- Avoid duplicate setups by checking if the server is already configured
+			if not lspconfig[server].manager then
+				(servers[server] or servers._default)(server)
+			end
 		end
 	end,
 }
