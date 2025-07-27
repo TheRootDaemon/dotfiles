@@ -7,8 +7,8 @@ return {
             require("telescope").setup({
                 defaults = {
                     layout_config = {
-                        preview_width = 0.6, -- Make preview pane wider (60% of window)
-                        width = 0.75,
+                        preview_width = 0.6,
+                        width = 0.7,
                         height = 0.9,
                     },
                 },

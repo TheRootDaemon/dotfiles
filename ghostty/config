@@ -14,8 +14,8 @@ theme = "catppuccin-mocha"
 window-padding-x = 0
 window-padding-y = 0
 background-opacity = 0.8
-window-width = 162
-window-height = 48
+window-width = 128
+window-height = 42
 
 # Font Settings 
 font-family = "Caskaydia Cove Nerd Font"

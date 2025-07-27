@@ -42,6 +42,11 @@ vim.g.mapleader = " "
 vim.g.have_nerd_font = true
 vim.g.netrw_banner = 0
 
+-- Some essentials
+vim.keymap.set("n", "<leader>w", "<cmd>:w<CR>")
+vim.keymap.set("n", "<leader>wq", "<cmd>:wqa<CR>")
+vim.keymap.set("n", "<leader>q", "<cmd>:qa!<CR>")
+
 -- Clear search highlight with <Esc>
 vim.keymap.set("n", "<leader>f", ":%s/")
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
