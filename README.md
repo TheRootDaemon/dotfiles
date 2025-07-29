@@ -1,36 +1,29 @@
 # Dotfiles
 
-This repo contains configs for, 
+Dotfiles of my Arch workflow, perfected for productivity...
+Obviously according to my personal tastes !!
 
-- Starship
-- Neovim
-- Ghostty
-- zsh
-- tmux
-- yazi
-
-The following command installs the plugin manager for zsh
 ```bash
-sudo pacman -S zsh-antidote
+sudo pacman -Rns gnome-maps gnome-connections epiphany decibels gnome-contacts gnome-console gnome-music gnome-tour gnome-weather totem htop
 ```
 The following command installs some utils for neovim 
 ```bash
-sudo pacman -S wl-clipboard ripgrep luarocks python-pynvim
+yay -S zsh-antidote
+sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-noto-nerd
+sudo pacman -S wl-clipboard ripgrep luarocks python-pynvim fd
 sudo npm insatall -g neovim
 ```
-Make sure to install tmux plugin manager before using configs for tmux
-Also i used the $HOME/.config format
-```bash
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
 
-I use symbolic links to point dotfile in my git repo, Since it is very friendly to lazy people
+I use symbolic links to point the dotfiles in my git repo, Since it is easy to maintain a repo !
 ```bash
 ln -s <orginal dotfiles> <where to place the dotfiles>
 ```
 
 For example, If I wanted to point to some of my dotfiles in my repo I will do This
 ```bash
+ln -s ~/dotfiles/.zshrc ~/.zshrc
+ln -s ~/dotfiles/.zsh_plugins.txt ~/.zsh_plugins.txt
+ln -s ~/dotfiles/kitty ~/.config/kitty
 ln -s ~/dotfiles/nvim ~/.config/nvim
 ln -s ~/dotfiles/starship.toml ~/.config/starship.toml
 ln -s ~/dotfiles/ghostty ~/.config/ghostty

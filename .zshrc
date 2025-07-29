@@ -41,3 +41,9 @@ source ${zsh_plugins}.zsh
 # Startup
 eval eval "$(oh-my-posh init zsh --config ~/dotfiles/oh-my-posh.json)"
 echo ""
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/therootdaemon/.dart-cli-completion/zsh-config.zsh ]] && . /home/therootdaemon/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
