@@ -8,8 +8,8 @@ return {
             transparent_background = true,
             custom_highlights = function(colors)
                 return {
-                    LineNr = { fg = colors.pink },
-                    EndOfBuffer = { fg = colors.pink },
+                    LineNr = { fg = colors.text },
+                    EndOfBuffer = { fg = colors.text },
                 }
             end,
         })
