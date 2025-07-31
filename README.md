@@ -11,7 +11,7 @@ The following command installs some utils for neovim
 yay -S zsh-antidote
 sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-noto-nerd
 sudo pacman -S wl-clipboard ripgrep luarocks python-pynvim fd
-sudo npm insatall -g neovim
+sudo npm install -g neovim
 ```
 
 I use symbolic links to point the dotfiles in my git repo, Since it is easy to maintain a repo !
