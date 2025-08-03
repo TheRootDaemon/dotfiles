@@ -7,7 +7,7 @@ SAVEHIST=5000
 setopt nomatch
 
 # Autocompletion configs
-zstyle :compinstall filename '/home/peanut/.zshrc'
+zstyle :compinstall filename '/home/therootdaemon/.zshrc'
 autoload -Uz compinit
 compinit
 
@@ -19,10 +19,10 @@ alias vim="nvim"
 alias xnew="tmux new -s"
 alias xconnect="tmux attach -t"
 alias xkill="tmux kill-server"
-alias sql="sqlite3"
 alias binact="source bin/activate"
 alias update="sudo pacman -Syu && yay -Syu && flatpak update"
 alias docker="sudo docker"
+alias pacman="sudo pacman"
 
 # Antidote configs (Plugin manager)
 zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
@@ -39,7 +39,7 @@ fi
 source ${zsh_plugins}.zsh
 
 # Startup
-eval eval "$(oh-my-posh init zsh --config ~/dotfiles/oh-my-posh.json)"
+eval eval "$(oh-my-posh init zsh --config ~/peanuts/oh-my-posh.json)"
 echo ""
 
 ## [Completion]

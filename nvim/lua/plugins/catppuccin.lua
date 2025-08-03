@@ -9,7 +9,7 @@ return {
             custom_highlights = function(colors)
                 return {
                     LineNr = { fg = colors.text },
-                    EndOfBuffer = { fg = colors.text },
+                    EndOfBuffer = { fg = colors.blue, bold = true },
                 }
             end,
         })

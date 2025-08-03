@@ -85,6 +85,12 @@ return {
                 vim.lsp.buf.references,
                 vim.tbl_extend("force", opts, { desc = "Go to References" })
             )
+            vim.keymap.set(
+                "n",
+                "rn",
+                vim.lsp.buf.rename,
+                vim.tbl_extend("force", opts, { desc = "Rename symbols" })
+            )
             vim.keymap.set("n", "ca", vim.lsp.buf.code_action, vim.tbl_extend("force", opts, { desc = "Code Action" }))
         end
 
