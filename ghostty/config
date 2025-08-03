@@ -17,5 +17,5 @@ window-height = 42
 
 # Font Settings 
 font-family = "Caskaydia Cove Nerd Font"
-font-size = 13
+font-size = 12
 font-feature = "-calt, -liga, -dlig"
