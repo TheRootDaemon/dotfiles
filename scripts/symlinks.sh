@@ -2,7 +2,7 @@
 
 set -e
 
-dotfiles="$HOME/peanuts"
+dotfiles="$HOME/dotfiles"
 
 declare -A symlinks=(
     [".zshrc"]="$HOME/.zshrc"
