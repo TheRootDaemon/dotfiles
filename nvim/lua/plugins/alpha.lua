@@ -1,10 +1,8 @@
 return {
     "goolord/alpha-nvim",
     event = "VimEnter",
-    dependencies = { "catppuccin/nvim" },
     opts = function()
         local dashboard = require("alpha.themes.dashboard")
-        local catppuccin = require("catppuccin.palettes").get_palette()
 
         dashboard.section.header.val = {
             "",
@@ -40,10 +38,10 @@ return {
         end
         dashboard.section.buttons.opts.hl = "AlphaButtons"
 
-        vim.api.nvim_set_hl(0, "AlphaHeader", { fg = catppuccin.pink, bold = true, italic = true })
-        vim.api.nvim_set_hl(0, "AlphaButtons", { fg = catppuccin.blue })
-        vim.api.nvim_set_hl(0, "AlphaShortcut", { fg = catppuccin.teal })
-        vim.api.nvim_set_hl(0, "AlphaFooter", { fg = catppuccin.maroon, italic = true })
+        vim.api.nvim_set_hl(0, "AlphaHeader", { fg = "#f5c2e7", bold = true, italic = true })
+        vim.api.nvim_set_hl(0, "AlphaButtons", { fg = "#89b4fa" })
+        vim.api.nvim_set_hl(0, "AlphaShortcut", { fg = "#94e2d5" })
+        vim.api.nvim_set_hl(0, "AlphaFooter", { fg = "#eba0ac", italic = true })
 
         dashboard.section.footer.opts.hl = "AlphaFooter"
 
@@ -52,8 +50,6 @@ return {
         return dashboard
     end,
     config = function(_, dashboard)
-        vim.keymap.set("n", "<leader>h", ":Alpha<CR>")
-
         require("alpha").setup(dashboard.opts)
 
         vim.api.nvim_create_autocmd("User", {

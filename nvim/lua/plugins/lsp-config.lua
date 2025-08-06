@@ -73,6 +73,7 @@ return {
             local opts = { buffer = bufnr, silent = true, noremap = true }
 
             vim.keymap.set("n", "K", vim.lsp.buf.hover, vim.tbl_extend("force", opts, { desc = "Hover" }))
+            vim.keymap.set("n", "ca", vim.lsp.buf.code_action, vim.tbl_extend("force", opts, { desc = "Code Action" }))
             vim.keymap.set(
                 "n",
                 "gd",
@@ -91,7 +92,6 @@ return {
                 vim.lsp.buf.rename,
                 vim.tbl_extend("force", opts, { desc = "Rename symbols" })
             )
-            vim.keymap.set("n", "ca", vim.lsp.buf.code_action, vim.tbl_extend("force", opts, { desc = "Code Action" }))
         end
 
         local servers = {

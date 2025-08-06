@@ -9,8 +9,8 @@ declare -A symlinks=(
     [".zsh_plugins.txt"]="$HOME/.zsh_plugins.txt"
     ["kitty"]="$HOME/.config/kitty"
     ["nvim"]="$HOME/.config/nvim"
-    ["starship.toml"]="$HOME/.config/starship.toml"
     ["ghostty"]="$HOME/.config/ghostty"
+    ["hypr"]="$HOME/.config/hypr"
     ["yazi"]="$HOME/.config/yazi"
 )
 
