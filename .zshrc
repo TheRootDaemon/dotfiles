@@ -14,15 +14,34 @@ compinit
 # Aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias py="python3"
+alias py="python"
 alias vim="nvim"
 alias xnew="tmux new -s"
 alias xconnect="tmux attach -t"
 alias xkill="tmux kill-server"
-alias binact="source bin/activate"
 alias update="sudo pacman -Syu && yay -Syu && flatpak update"
 alias docker="sudo docker"
 alias pacman="sudo pacman"
+
+# Sourcing environments
+act() {
+    if [ -z "$1" ]; then
+        if [ ! -f "bin/activate" ]; then
+            echo "bin/activate Not Found"
+            return 1
+        else
+            source bin/activate
+            return 0
+        fi
+    fi
+
+    if [ ! -f "$1/bin/activate" ]; then
+        echo "$1/bin/activate Not Found"
+        return 1
+    fi
+
+    source "$1/bin/activate"
+}
 
 # Antidote configs (Plugin manager)
 zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
@@ -46,4 +65,3 @@ echo ""
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /home/therootdaemon/.dart-cli-completion/zsh-config.zsh ]] && . /home/therootdaemon/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
-

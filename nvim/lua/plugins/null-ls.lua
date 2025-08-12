@@ -15,7 +15,7 @@ return {
                 null_ls.builtins.formatting.isort,
 
                 -- Formatting for JavaScript, TypeScript, JSON, CSS, HTML, etc.
-                null_ls.builtins.formatting.prettier,
+                -- null_ls.builtins.formatting.prettier,
 
                 -- Formatting and organizing imports for Go files
                 null_ls.builtins.formatting.goimports,
