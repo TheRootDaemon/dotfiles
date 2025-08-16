@@ -5,10 +5,11 @@ set -e
 dotfiles="$HOME/dotfiles"
 
 declare -A symlinks=(
-    [".zshrc"]="$HOME/.zshrc"
-    [".zsh_plugins.txt"]="$HOME/.zsh_plugins.txt"
+    ["zshrc"]="$HOME/.zshrc"
+    ["zsh_plugins.txt"]="$HOME/.zsh_plugins.txt"
     ["kitty"]="$HOME/.config/kitty"
     ["nvim"]="$HOME/.config/nvim"
+    ["tmux"]="$HOME/.config/tmux"
     ["ghostty"]="$HOME/.config/ghostty"
     ["hypr"]="$HOME/.config/hypr"
     ["yazi"]="$HOME/.config/yazi"
