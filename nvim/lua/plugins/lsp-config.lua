@@ -14,7 +14,6 @@ return {
 
         mason_lspconfig.setup({
             ensure_installed = {
-                -- Language Servers
                 "lua_ls",
                 "pyright",
                 "ts_ls",
@@ -26,14 +25,6 @@ return {
                 "clangd",
                 "svelte",
                 "tailwindcss",
-
-                -- Formatters, Linters
-                "black",
-                "isort",
-                "prettier",
-                "stylua",
-                "shfmt",
-                "clang-format",
             },
             automatic_setup = false,
             automatic_enable = false,

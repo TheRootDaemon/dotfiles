@@ -19,22 +19,49 @@ cd ~/dotfiles
 **Manual Symlink Setup (For the Control Freaks)**<br>
 If you don't trust my scripts (fair enough), here's the manual way:
 ```bash
-ln -s ~/dotfiles/.zshrc ~/.zshrc
-ln -s ~/dotfiles/.zsh_plugins.txt ~/.zsh_plugins.txt
-ln -s ~/dotfiles/kitty ~/.config/kitty
+ln -s {path/to/dots} {destination/to/dots}
+```
+
+Here's an example:
+```bash
 ln -s ~/dotfiles/nvim ~/.config/nvim
-ln -s ~/dotfiles/ghostty ~/.config/ghostty
-ln -s ~/dotfiles/hypr ~/.config/hypr
-ln -s ~/dotfiles/yazi ~/.config/yazi
-ln -s ~/dotfiles/tmux ~/.config/tmux
 ```
 
 **Features That'll Make You Jealous**
 - **Instant Productivity**: 0.3ms faster terminal startup (the difference is *chef's kiss*)
 - **Muscle Memory Friendly**: Keybinds that make sense (revolutionary, I know)
-- **Arch BTW**: Optimized for people who definitely use Arch by the way
+- **Arch BTW**: Optimized for people who definitely use Arch
+
+**The following are the keymaps that I use a lot**
+
+#### Some Essentials
+
+| Mode   | Keybinding   | Action                           |
+| ------ | ------------ | -------------------------------- |
+| Normal | `<leader>w`  | Save current file (`:w`)         |
+| Normal | `<leader>wq` | Save all files and quit (`:wqa`) |
+| Normal | `<leader>q`  | Quit without saving (`:qa!`)     |
+| Normal | `<leader>f` | Start a search and replace (`:%s/`)    |
+| Visual | `J`        | Move selected lines **down** one step |
+| Visual | `K`        | Move selected lines **up** one step   |
+
+#### Some Plugin Related Keymaps
+
+| Mode   | Keybinding  | Action               |
+| ------ | ----------- | -------------------- |
+| Normal | `<leader>e` | Toggle file explorer |
+| Normal | `<leader>ff` | Find files |
+| Normal | `<leader>fg` | Live grep  |
+| Normal | `<leader>x` | Delete current buffer    |
+| Normal | `<leader>n` | Cycle to next buffer     |
+| Normal | `<leader>p` | Cycle to previous buffer |
+| Normal | `K`        | Hover documentation |
+| Normal | `ca`       | Code actions        |
+| Normal | `gd`       | Go to definition    |
+| Normal | `gr`       | Go to references    |
+| Normal | `rn`       | Rename symbols      |
 
 **Contributing**
 
-Found a bug (There are bugs) ? Want to start an Arguement ? <br>
-Open up a Issue, Shoot a PR, Let's Merge our Dots !
+Found a bug? Of course there are bugs. Want to start an argument? Perfect.
+Open up a Issue, Shoot a PR, Let's spend **69** more hours to curate the dots.

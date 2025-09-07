@@ -22,7 +22,9 @@ sudo pacman -S --needed --noconfirm \
     fd \
     git \
     neovim \
-    kitty
+    kitty \
+    vlc \
+    vlc-plugins-all
 
 sudo npm install -g neovim
 
