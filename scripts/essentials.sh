@@ -1,19 +1,13 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 set -e
 
 yay -S --needed --noconfirm \
-    zsh-antidote \
-    ttf-cascadia-code-nerd
+    zsh-antidote
 
 sudo pacman -S --needed --noconfirm \
     nodejs\
     npm\
-    noto-fonts \
-    noto-fonts-cjk \
-    noto-fonts-emoji \
-    noto-fonts-extra \
-    ttf-noto-nerd \
     tmux\
     wl-clipboard \
     ripgrep \
@@ -21,10 +15,7 @@ sudo pacman -S --needed --noconfirm \
     python-pynvim \
     fd \
     git \
-    neovim \
-    kitty \
-    vlc \
-    vlc-plugins-all
+    neovim
 
 sudo npm install -g neovim
 

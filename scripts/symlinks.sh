@@ -1,18 +1,18 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 set -e
 
 dotfiles="$HOME/dotfiles"
 
 declare -A symlinks=(
-    ["zshrc"]="$HOME/.zshrc"
-    ["zsh_plugins.txt"]="$HOME/.zsh_plugins.txt"
+    ["ghostty"]="$HOME/.config/ghostty"
+    ["hypr"]="$HOME/.config/hypr"
     ["kitty"]="$HOME/.config/kitty"
     ["nvim"]="$HOME/.config/nvim"
     ["tmux"]="$HOME/.config/tmux"
-    ["ghostty"]="$HOME/.config/ghostty"
-    ["hypr"]="$HOME/.config/hypr"
     ["yazi"]="$HOME/.config/yazi"
+    ["zshrc"]="$HOME/.zshrc"
+    ["zsh_plugins.txt"]="$HOME/.zsh_plugins.txt"
 )
 
 for src in "${!symlinks[@]}"; do
@@ -26,6 +26,10 @@ for src in "${!symlinks[@]}"; do
     response="${response:-Y}"
 
     if [[ "$response" =~ ^[Yy]$ ]]; then
+        if [ ! -d "$HOME/.config" ]; then
+            mkdir "$HOME/.config"
+        fi
+
         if [ -e "$destination" ] || [ -L "$destination" ]; then
             rm -rf "$destination"
         fi

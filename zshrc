@@ -58,6 +58,8 @@ fi
 source ${zsh_plugins}.zsh
 
 # Startup
+eval $(thefuck --alias)
+eval $(thefuck --alias fuck)
 eval "$(oh-my-posh init zsh --config ~/dotfiles/oh-my-posh.json)"
 echo ""
 

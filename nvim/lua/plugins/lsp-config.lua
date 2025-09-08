@@ -35,10 +35,7 @@ return {
             virtual_text = true,
             severity_sort = true,
             float = {
-                style = "minimal",
-                border = "rounded",
-                header = "",
-                prefix = "",
+                style = "minimal"
             },
             signs = {
                 text = {
@@ -49,8 +46,6 @@ return {
                 },
             },
         })
-
-        require("lspconfig.ui.windows").default_options.border = "rounded"
 
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
         local capabilities = vim.tbl_deep_extend(

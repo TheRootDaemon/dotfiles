@@ -9,10 +9,12 @@ return {
         "saadparwaiz1/cmp_luasnip",
         "L3MON4D3/LuaSnip",
         "rafamadriz/friendly-snippets",
+        "onsails/lspkind.nvim"
     },
     config = function()
         local cmp = require("cmp")
         local luasnip = require("luasnip")
+        local lspkind = require("lspkind")
 
         require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -21,17 +23,13 @@ return {
         cmp.setup({
             preselect = "item",
             completion = {
-                completeopt = "menu,menuone,noinsert",
-            },
-            window = {
-                completion = cmp.config.window.bordered(),
-                documentation = cmp.config.window.bordered(),
+                completeopt = "menu,menuone,preview,noinsert",
             },
             sources = {
-                { name = "path" },
                 { name = "nvim_lsp" },
-                { name = "buffer",  keyword_length = 3 },
-                { name = "luasnip", keyword_length = 2 },
+                { name = "luasnip" },
+                { name = "buffer" },
+                { name = "path" },
             },
             snippet = {
                 expand = function(args)
@@ -39,12 +37,20 @@ return {
                 end,
             },
             formatting = {
-                fields = { "abbr", "menu", "kind" },
-                format = function(entry, item)
-                    local source_name = entry.source.name
-                    item.menu = source_name == "nvim_lsp" and "[LSP]" or string.format("[%s]", source_name)
-                    return item
-                end,
+                fields = { "kind", "abbr" },
+                format = lspkind.cmp_format({
+                    mode = "symbol_text",
+                    maxwidth = {
+                        menu = 50,
+                        abbr = 50,
+                    },
+                    ellipsis_char = "...",
+                    show_labelDetails = true,
+                    before = function(entry, vim_item)
+                        vim_item.menu = nil
+                        return vim_item
+                    end,
+                })
             },
             mapping = cmp.mapping.preset.insert({
                 ["<CR>"] = cmp.mapping.confirm({ select = false }),
