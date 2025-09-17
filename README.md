@@ -1,3 +1,7 @@
+<div align="center">
+ <img src="dotfiles.png" height="200">
+</div>
+
 <p align="center">
  <img src="https://img.shields.io/badge/Arch-363a4f?style=for-the-badge&logo=arch-linux&logoColor=1793D1" height="35">
  <img src="https://img.shields.io/badge/Neovim-363a4f?style=for-the-badge&logo=neovim&logoColor=a6da95" height="35">
@@ -26,6 +30,7 @@ git clone https://github.com/TheRootDaemon/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 
 # 2. Run the magic scripts
+./scripts/yay.sh         # Install yay
 ./scripts/essentials.sh  # Install the good stuff
 ./scripts/utils.sh       # Install the Utils fonts and stuff
 ./scripts/symlinks.sh    # Connect the dots
@@ -34,12 +39,16 @@ cd ~/dotfiles
 
 - For the **WSL** guys who got stuck with hell. I've been there too :)
 ```bash
+# Before doing this make sure you have created users with proper permissions
 git clone https://github.com/TheRootDaemon/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 
+./scripts/yay.sh
 ./scripts/essentials.sh
 ./scripts/symlinks.sh
 ```
+
+Also here are the [keymaps](KEYMAPS.md) that I use.
 
 ---
 **Manual Symlink Setup (For the Control Freaks)**:<br>
@@ -53,40 +62,6 @@ Here's an example:
 ```bash
 ln -s ~/dotfiles/nvim ~/.config/nvim
 ```
-
----
-**The following are the keymaps that I use a lot**:
-
-<div align="center">
-
-#### Some Essentials
-
-| Mode   | Keybinding   | Action                           |
-| ------ | ------------ | -------------------------------- |
-| Normal | `<leader>w`  | Save current file (`:w`)         |
-| Normal | `<leader>wq` | Save all files and quit (`:wqa`) |
-| Normal | `<leader>q`  | Quit without saving (`:qa!`)     |
-| Normal | `<leader>f` | Start a search and replace (`:%s/`)    |
-| Visual | `J`        | Move selected lines **down** one step |
-| Visual | `K`        | Move selected lines **up** one step   |
-
-#### Some Plugin Related Keymaps
-
-| Mode   | Keybinding  | Action               |
-| ------ | ----------- | -------------------- |
-| Normal | `<leader>e` | Toggle file explorer |
-| Normal | `<leader>ff` | Find files |
-| Normal | `<leader>fg` | Live grep  |
-| Normal | `<leader>x` | Delete current buffer    |
-| Normal | `<leader>n` | Cycle to next buffer     |
-| Normal | `<leader>p` | Cycle to previous buffer |
-| Normal | `K`        | Hover documentation |
-| Normal | `ca`       | Code actions        |
-| Normal | `gd`       | Go to definition    |
-| Normal | `gr`       | Go to references    |
-| Normal | `rn`       | Rename symbols      |
-
-</div>
 
 ---
 **Contributing**:

@@ -20,7 +20,6 @@ alias xnew="tmux new -s"
 alias xconnect="tmux attach -t"
 alias xkill="tmux kill-server"
 alias update="sudo pacman -Syu && yay -Syu && flatpak update"
-alias docker="sudo docker"
 alias pacman="sudo pacman"
 
 # Sourcing environments
