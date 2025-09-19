@@ -1,3 +1,4 @@
+### Plugin, Lazy keymaps for Neovim
 <div align="center">
 
 <p><strong>Keymaps that are defined for my preferences.</strong></p>

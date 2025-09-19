@@ -14,6 +14,7 @@ sudo mv "$tempDir/papirus-icon-theme/Papirus" /usr/share/icons/
 
 echo "Moved icons, removing temp files"
 rm -rf "$tempDir"
- 
+
+echo "Installed Papirus icon themes"
 ls -la /usr/share/icons | grep Papirus
 ls -la /usr/share/icons/Papirus

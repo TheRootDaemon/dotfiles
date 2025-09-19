@@ -31,7 +31,9 @@ cd ~/dotfiles
 
 # 2. Run the magic scripts
 ./scripts/yay.sh         # Install yay
-./scripts/essentials.sh  # Install the good stuff
+./scripts/neovim.sh      # Install neovim & family
+./scripts/tmux.sh        # Install tmux, tpm
+./scripts/zsh.sh         # Install zsh, zsh-antidote, thefuck, tldr
 ./scripts/utils.sh       # Install the Utils fonts and stuff
 ./scripts/symlinks.sh    # Connect the dots
 ./scripts/bloat.sh       # Remove some bloatware
@@ -44,7 +46,9 @@ git clone https://github.com/TheRootDaemon/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 
 ./scripts/yay.sh
-./scripts/essentials.sh
+./scripts/neovim.sh
+./scripts/tmux.sh
+./scripts/zsh.sh
 ./scripts/symlinks.sh
 ```
 

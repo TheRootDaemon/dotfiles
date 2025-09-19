@@ -15,5 +15,5 @@ sudo pacman -S --needed --noconfirm \
     vlc \
     vlc-plugins-all
 
-sleep 0.5
+sleep 1
 echo "Utils installed :)"

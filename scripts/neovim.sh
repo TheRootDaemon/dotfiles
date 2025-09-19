@@ -2,9 +2,6 @@
 
 set -e
 
-yay -S --needed --noconfirm \
-    zsh-antidote
-
 sudo pacman -S --needed --noconfirm \
     nodejs\
     npm\
@@ -19,5 +16,5 @@ sudo pacman -S --needed --noconfirm \
 
 sudo npm install -g neovim
 
-sleep 0.5
-echo "Konnichiwa Root Daemon !"
+sleep 1
+echo "Installed neovim and it's dependencies"
