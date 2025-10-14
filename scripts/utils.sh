@@ -3,7 +3,7 @@
 set -e
 
 yay -S --needed --noconfirm \
-    ttf-cascadia-code-nerd
+    ttf-jetbrains-mono-nerd
 
 sudo pacman -S --needed --noconfirm \
     noto-fonts \

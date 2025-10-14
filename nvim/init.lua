@@ -1,15 +1,20 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable",
-        lazypath,
-    })
-end
-vim.opt.rtp:prepend(lazypath)
+require("core.settings")
+require("core.lspconfig")
+vim.pack.add(
+    {
+        "https://github.com/folke/tokyonight.nvim",
+        "https://github.com/nvim-lua/plenary.nvim",
+        "https://github.com/nvim-tree/nvim-web-devicons",
+        "https://github.com/nvim-telescope/telescope.nvim",
+        "https://github.com/stevearc/oil.nvim",
+        "https://github.com/akinsho/bufferline.nvim",
+        "https://github.com/neovim/nvim-lspconfig",
+        "https://github.com/stevearc/conform.nvim",
+    }
+)
 
-require("options")
-require("lazy").setup("plugins")
+require("plugs.tokyonight")
+require("plugs.telescope")
+require("plugs.oil")
+require("plugs.bufferline")
+require("plugs.conform")

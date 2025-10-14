@@ -1,14 +1,12 @@
-vim.g.lazyvim_check_order = false
-
--- Use system clipboard for all operations
-vim.opt.clipboard = "unnamedplus"
-
--- Blocky cursor all the time
+-- General settings
+vim.opt.mouse = "a"
+vim.g.mapleader = " "
 vim.o.guicursor = ""
-
--- Show line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.cursorline = true
+vim.opt.termguicolors = true
+vim.opt.clipboard = "unnamedplus"
 
 -- Indentation configs
 vim.opt.expandtab = true
@@ -27,18 +25,12 @@ vim.opt.smartcase = true
 
 -- Keep 8 lines visible above/below the cursor
 vim.opt.scrolloff = 8
-vim.opt.wrap = false
+vim.opt.wrap = true
+vim.opt.breakindent = true
 
 -- File Handling
 vim.opt.swapfile = false
 vim.opt.backup = false
-
--- Enable true color support
-vim.opt.termguicolors = true
-vim.opt.mouse = "a"
-
--- Set <Space> as the leader key
-vim.g.mapleader = " "
 
 -- Nerd Font Support
 vim.g.have_nerd_font = true
@@ -46,8 +38,9 @@ vim.g.netrw_banner = 0
 
 -- Some essentials
 vim.keymap.set("n", "<leader>w", "<cmd>:w<CR>")
+vim.keymap.set("n", "<leader>q", "<cmd>:q<CR>")
 vim.keymap.set("n", "<leader>wq", "<cmd>:wqa<CR>")
-vim.keymap.set("n", "<leader>q", "<cmd>:qa!<CR>")
+vim.keymap.set("n", "<leader>so", "<cmd>:source %<CR>")
 
 -- Clear search highlight with <Esc>
 vim.keymap.set("n", "<leader>f", ":%s/")
