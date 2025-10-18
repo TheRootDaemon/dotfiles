@@ -3,10 +3,7 @@
 set -e
 
 sudo pacman -S --needed --noconfirm \
-    nodejs\
-    npm\
-    tmux\
-    wl-clipboard \
+    nodejs npm tmux wl-clipboard \
     ripgrep \
     luarocks \
     python-pynvim \
@@ -14,6 +11,7 @@ sudo pacman -S --needed --noconfirm \
     git \
     neovim
 
+# Language Servers
 sudo pacman -S --needed --noconfirm \
     bash-language-server \
     lua-language-server \
@@ -22,6 +20,12 @@ sudo pacman -S --needed --noconfirm \
     svelte-language-server \
     tailwind-language-server \
     pyright
+
+sudo pacman -S --needed --noconfirm \
+    stylua \
+    shfmt \
+    gofumpt \
+    prettier
 
 sudo npm install -g neovim
 

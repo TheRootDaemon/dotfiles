@@ -1,20 +1,4 @@
 require("core.settings")
-require("core.lspconfig")
-vim.pack.add(
-    {
-        "https://github.com/folke/tokyonight.nvim",
-        "https://github.com/nvim-lua/plenary.nvim",
-        "https://github.com/nvim-tree/nvim-web-devicons",
-        "https://github.com/nvim-telescope/telescope.nvim",
-        "https://github.com/stevearc/oil.nvim",
-        "https://github.com/akinsho/bufferline.nvim",
-        "https://github.com/neovim/nvim-lspconfig",
-        "https://github.com/stevearc/conform.nvim",
-    }
-)
 
-require("plugs.tokyonight")
-require("plugs.telescope")
-require("plugs.oil")
-require("plugs.bufferline")
-require("plugs.conform")
+require("core.pack")
+require("core.lspconfig")

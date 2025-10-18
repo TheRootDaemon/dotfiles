@@ -26,35 +26,35 @@ compose() {
 
     while [[ $# -gt 0 ]]; do
         case "$1" in
-            -f|--force)
-                FORCE=true
-                STOP=true
-                CLEAN=true
-                ;;
-            -s|--stop)
-                STOP=true
-                ;;
-            -c|--clean)
-                CLEAN=true
-                ;;
-            -r|--recreate)
-                RECREATE=true
-                ;;
-            -h|--help)
-                echo "Usage: compose {{options}}"
-                echo
-                echo "Options:"
-                echo "  -f, --force       Stop, prune, and rebuild images before starting"
-                echo "  -s, --stop        Stop containers and prune (no rebuild)"
-                echo "  -c, --clean       Prune dangling containers/images only"
-                echo "  -r, --recreate    Rebuild images and recreate containers"
-                echo
-                return 0
-                ;;
-            *)
-                echo "Unknown option: $1"
-                return 1
-                ;;
+        -f | --force)
+            FORCE=true
+            STOP=true
+            CLEAN=true
+            ;;
+        -s | --stop)
+            STOP=true
+            ;;
+        -c | --clean)
+            CLEAN=true
+            ;;
+        -r | --recreate)
+            RECREATE=true
+            ;;
+        -h | --help)
+            echo "Usage: compose {{options}}"
+            echo
+            echo "Options:"
+            echo "  -f, --force       Stop, prune, and rebuild images before starting"
+            echo "  -s, --stop        Stop containers and prune (no rebuild)"
+            echo "  -c, --clean       Prune dangling containers/images only"
+            echo "  -r, --recreate    Rebuild images and recreate containers"
+            echo
+            return 0
+            ;;
+        *)
+            echo "Unknown option: $1"
+            return 1
+            ;;
         esac
         shift
     done

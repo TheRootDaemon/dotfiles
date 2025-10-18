@@ -37,14 +37,16 @@ vim.g.have_nerd_font = true
 vim.g.netrw_banner = 0
 
 -- Some essentials
-vim.keymap.set("n", "<leader>w", "<cmd>:w<CR>")
-vim.keymap.set("n", "<leader>q", "<cmd>:q<CR>")
-vim.keymap.set("n", "<leader>wq", "<cmd>:wqa<CR>")
-vim.keymap.set("n", "<leader>so", "<cmd>:source %<CR>")
+vim.keymap.set("n", "<leader>w", "<CMD>:w<CR>")
+vim.keymap.set("n", "<leader>q", "<CMD>:q<CR>")
+vim.keymap.set("n", "<leader>wq", "<CMD>:wqa<CR>")
+vim.keymap.set("n", "<leader>so", "<CMD>:source %<CR>")
+vim.keymap.set("n", "<leader>l", "<CMD>:.lua<CR>")
+vim.keymap.set("n", "<leader>pu", "<CMD>:lua vim.pack.update()<CR>")
 
 -- Clear search highlight with <Esc>
+vim.keymap.set("n", "<Esc>", "<CMD>nohlsearch<CR>")
 vim.keymap.set("n", "<leader>f", ":%s/")
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Move selected lines up and down in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")

@@ -1,10 +1,9 @@
 require("bufferline").setup({
-    options = {
-        diagnostics = "nvim_lsp",
-        always_show_bufferline = false,
-        indicator = {
-        }
-    }
+	options = {
+		diagnostics = "nvim_lsp",
+		always_show_bufferline = false,
+		indicator = {},
+	},
 })
 
 vim.keymap.set("n", "<leader>x", "<cmd>bdelete<CR>", {})
