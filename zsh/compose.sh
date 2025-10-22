@@ -1,22 +1,3 @@
-act() {
-    if [ -z "$1" ]; then
-        if [ ! -f "bin/activate" ]; then
-            echo "bin/activate Not Found"
-            return 1
-        else
-            source bin/activate
-            return 0
-        fi
-    fi
-
-    if [ ! -f "$1/bin/activate" ]; then
-        echo "$1/bin/activate Not Found"
-        return 1
-    fi
-
-    source "$1/bin/activate"
-}
-
 compose() {
     echo ""
     FORCE=false
@@ -53,6 +34,7 @@ compose() {
             ;;
         *)
             echo "Unknown option: $1"
+            echo "Try 'compose {{-h|--help}}' for help."
             return 1
             ;;
         esac
@@ -85,7 +67,9 @@ compose() {
         echo ""
         echo ""
         docker compose up -d --build --force-recreate
-    else
+    fi
+
+    if ! $STOP && ! $CLEAN; then
         echo "Starting containers..."
         echo ""
         echo ""

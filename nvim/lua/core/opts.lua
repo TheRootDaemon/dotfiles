@@ -1,4 +1,3 @@
--- General settings
 vim.opt.mouse = "a"
 vim.g.mapleader = " "
 vim.o.guicursor = ""
@@ -6,9 +5,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
-vim.opt.clipboard = "unnamedplus"
 
--- Indentation configs
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
@@ -42,7 +39,7 @@ vim.keymap.set("n", "<leader>q", "<CMD>:q<CR>")
 vim.keymap.set("n", "<leader>wq", "<CMD>:wqa<CR>")
 vim.keymap.set("n", "<leader>so", "<CMD>:source %<CR>")
 vim.keymap.set("n", "<leader>l", "<CMD>:.lua<CR>")
-vim.keymap.set("n", "<leader>pu", "<CMD>:lua vim.pack.update()<CR>")
+vim.keymap.set("n", "<leader>U", "<CMD>:lua vim.pack.update()<CR>")
 
 -- Clear search highlight with <Esc>
 vim.keymap.set("n", "<Esc>", "<CMD>nohlsearch<CR>")

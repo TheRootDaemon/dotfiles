@@ -1,21 +1,10 @@
-# Cursor configs
-cursor-style = "block"
-cursor-invert-fg-bg = true
-cursor-color = "#ffffff"
-cursor-style-blink = false
+background = 191724
+theme = TokyoNight Night
 
-# Shell Integration 
-shell-integration-features = "no-cursor"
-
-# Theme 
-theme = "catppuccin-mocha"
-
-# Window Appearance 
-background-opacity = 0.8
-window-width = 128
-window-height = 42
-
-# Font Settings 
-font-family = "JetBrainsMono Nerd Font"
-font-size = 12
+font-size = 17
 font-feature = "-calt, -liga, -dlig"
+font-family = "JetBrainsMono Nerd Font"
+
+cursor-style = "block"
+cursor-style-blink = false
+shell-integration-features = "no-cursor"

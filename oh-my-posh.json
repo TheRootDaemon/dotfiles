@@ -55,7 +55,7 @@
           "type": "git",
           "style": "plain",
           "foreground": "p:maroon",
-          "template": " <p:text>git:(</>{{ .HEAD }}<p:teal>{{ if .Working.Changed }} ~{{ end }}{{ if .Staging.Changed }} +{{ end }}{{ if .Ahead }} ⇡{{ .Ahead }}{{ end }}{{ if .Behind }} ⇣{{ .Behind }}{{ end }}</><p:text>)</>",
+          "template": " <p:text>git:(</>{{ .HEAD }}<p:teal>{{ if .Working.Changed }} ~{{ end }}{{ if .Staging.Changed }} +{{ end }}{{ if .Ahead }} 󰔵 {{ .Ahead }}{{ end }}{{ if .Behind }} 󰔳 {{ .Behind }}{{ end }}</><p:text>)</>",
           "properties": {
             "branch_icon": "",
             "fetch_status": true,

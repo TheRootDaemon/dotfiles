@@ -11,14 +11,13 @@ sudo pacman -S --needed --noconfirm \
     git \
     neovim
 
-# Language Servers
 sudo pacman -S --needed --noconfirm \
     bash-language-server \
     lua-language-server \
     gopls \
     typescript-language-server \
     svelte-language-server \
-    tailwind-language-server \
+    tailwindcss-language-server \
     pyright
 
 sudo pacman -S --needed --noconfirm \

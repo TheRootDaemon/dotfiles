@@ -1,8 +1,13 @@
 {
   "plugins": {
+    "Comment.nvim": {
+      "rev": "e30b7f2",
+      "src": "https://github.com/numToStr/Comment.nvim"
+    },
     "blink.cmp": {
-      "rev": "cb87357",
-      "src": "https://github.com/Saghen/blink.cmp"
+      "rev": "327fff9",
+      "src": "https://github.com/Saghen/blink.cmp",
+      "version": "1.0.0 - 2.0.0"
     },
     "bufferline.nvim": {
       "rev": "655133c",
@@ -16,9 +21,17 @@
       "rev": "572f566",
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
+    "fzf-lua": {
+      "rev": "c102a4e",
+      "src": "https://github.com/ibhagwan/fzf-lua"
+    },
     "mini.indentscope": {
       "rev": "e9fa071",
       "src": "https://github.com/nvim-mini/mini.indentscope"
+    },
+    "nvim-autopairs": {
+      "rev": "7a2c97c",
+      "src": "https://github.com/windwp/nvim-autopairs"
     },
     "nvim-lspconfig": {
       "rev": "ac98db2",
@@ -27,7 +40,7 @@
     "nvim-treesitter": {
       "rev": "42fc28ba",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
-      "version": "'master'"
+      "version": "'main'"
     },
     "nvim-web-devicons": {
       "rev": "b8221e4",
@@ -36,14 +49,6 @@
     "oil.nvim": {
       "rev": "919e155",
       "src": "https://github.com/stevearc/oil.nvim"
-    },
-    "plenary.nvim": {
-      "rev": "b9fd522",
-      "src": "https://github.com/nvim-lua/plenary.nvim"
-    },
-    "telescope.nvim": {
-      "rev": "b4da76b",
-      "src": "https://github.com/nvim-telescope/telescope.nvim"
     },
     "tokyonight.nvim": {
       "rev": "d14614c",
