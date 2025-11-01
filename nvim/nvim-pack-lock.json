@@ -29,9 +29,9 @@
       "rev": "e9fa071",
       "src": "https://github.com/nvim-mini/mini.indentscope"
     },
-    "nvim-autopairs": {
-      "rev": "7a2c97c",
-      "src": "https://github.com/windwp/nvim-autopairs"
+    "nvim": {
+      "rev": "8c4125e",
+      "src": "https://github.com/catppuccin/nvim"
     },
     "nvim-lspconfig": {
       "rev": "ac98db2",

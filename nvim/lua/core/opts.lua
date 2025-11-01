@@ -41,7 +41,9 @@ vim.keymap.set("n", "<leader>so", "<CMD>:source %<CR>")
 vim.keymap.set("n", "<leader>l", "<CMD>:.lua<CR>")
 vim.keymap.set("n", "<leader>U", "<CMD>:lua vim.pack.update()<CR>")
 
-vim.keymap.set({ "n", "v" }, "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>yy", '"+yy')
+vim.keymap.set("v", "<leader>y", '"+y')
+vim.keymap.set({ "n", "v" }, "<leader>p", '"+p')
 
 -- Clear search highlight with <Esc>
 vim.keymap.set("n", "<Esc>", "<CMD>nohlsearch<CR>")

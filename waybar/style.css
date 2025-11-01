@@ -1,11 +1,19 @@
-@import "root-daemon.css";
+@define-color dawn #faf4ed;
+@define-color moon #191724;
+@define-color half-moon #393552;
+
+@define-color teal #94e2d5;
+@define-color peach #ff79c6;
+@define-color mauve #cba6f7;
+@define-color maroon #eba0ac;
+@define-color health #39ff14;
+@define-color lavender #b4befe;
 
 * {
   border: none;
   border-radius: 0;
   margin: 0;
   padding: 0;
-  min-height: 0;
   font-size: 16px;
   font-weight: 900;
   font-family: "JetBrainsMono Nerd Font Propo";
@@ -13,6 +21,10 @@
 
 window#waybar {
   background: transparent;
+}
+
+#workspaces {
+  margin-left: 15rem;
 }
 
 #workspaces button {
@@ -42,8 +54,8 @@ window#waybar {
 }
 
 #clock {
-  color: @half-moon;
-  background: @mauve;
+  color: @mauve;
+  background: @moon;
 }
 
 #tray {
@@ -51,16 +63,31 @@ window#waybar {
 }
 
 #pulseaudio {
-  color: @half-moon;
-  background: @maroon;
+  color: @teal;
+  background: @half-moon;
 }
 
 #network {
-  color: @half-moon;
-  background: @peach;
+  color: @lavender;
+  background: @half-moon;
 }
 
 #battery {
-  color: @half-moon;
-  background: @pastel;
+  margin-right: 15rem;
+  color: @health;
+  background: @half-moon;
+}
+
+#battery.charging,
+#battery.charging.warning,
+#battery.charging.critical {
+  color: @health;
+}
+
+#battery.warning {
+  color: @maroon;
+}
+
+#battery.critical {
+  color: @peach;
 }

@@ -1,4 +1,5 @@
 vim.pack.add({
+    "https://github.com/catppuccin/nvim",
     "https://github.com/folke/tokyonight.nvim",
 
     -- Dependencies
@@ -19,7 +20,6 @@ vim.pack.add({
     },
 
     -- Formatters
-    "https://github.com/windwp/nvim-autopairs",
     "https://github.com/stevearc/conform.nvim",
     "https://github.com/nvim-mini/mini.indentscope",
     {

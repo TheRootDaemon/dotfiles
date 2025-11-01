@@ -3,7 +3,7 @@
   "margin-top": 5,
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
-  "modules-right": ["tray", "pulseaudio", "network", "battery"],
+  "modules-right": ["tray", "network", "pulseaudio", "battery"],
   "hyprland/workspaces": {
     "format": "{name}",
     "persistent-workspaces": {
@@ -16,6 +16,16 @@
   "tray": {
     "icon-size": 16,
     "spacing": 10,
+  },
+  "network": {
+    "tooltip": false,
+    "interface": "wlan0",
+    "format": "{ifname}",
+    "format-wifi": "{signalStrength}% ",
+    "format-ethernet": "{cidr} ",
+    "format-disconnected": "",
+    "on-click": "nmgui",
+    "max-length": 50,
   },
   "pulseaudio": {
     "tooltip": false,
@@ -31,18 +41,21 @@
     "on-click": "pavucontrol",
     "ignored-sinks": ["Easy Effects Sink"],
   },
-  "network": {
-    "tooltip": false,
-    "interface": "wlan0",
-    "format": "{ifname}",
-    "format-wifi": "{signalStrength}% ",
-    "format-ethernet": "{cidr} ",
-    "format-disconnected": "",
-    "max-length": 50,
-  },
   "battery": {
     "tooltip": false,
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
     "format": "{capacity}% {icon}",
-    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁾", "󰁾", "󰂀", "󰂁", "󱈏"],
+    "format-charging": "{capacity}% {icon} 󱐋",
+    "format-warning": "{capacity}% {icon} !",
+    "format-critical": "{capacity}% {icon} ",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁾", "󰁾", "󰂀", "󰂁", "󱈑"],
+    "events": {
+      "on-discharging-warning": "notify-send 'Consider plugging me in, take a stroll bring the adapter.'",
+      "on-discharging-critical": "notify-send 'Lazy Bastard, plug me in right away. I am gonna die soon.'",
+      "on-charging-95": "notify-send 'Lazy Bastard, it's time to plug out",
+    },
   },
 }

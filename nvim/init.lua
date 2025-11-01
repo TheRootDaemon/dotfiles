@@ -1,3 +1,3 @@
 require("core.opts")
-require("core.root")
-require("core.daemon")
+require("core.manager")
+require("core.lspconfig")

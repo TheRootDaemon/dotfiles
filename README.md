@@ -14,6 +14,7 @@
 </p>
 
 ---
+
 **Dotfiles curated for being a Better Nerd, They make your machine truly yours too...**
 
 Welcome to my carefully curated collection of configurations that make my machine do exactly what I want, when I want it. This is my home, messy in some corners, but perfectly organized where it counts.
@@ -21,53 +22,20 @@ Welcome to my carefully curated collection of configurations that make my machin
 Spending **69 hours** configuring your terminal to save **3 seconds per day** is totally worth it.
 
 ---
-**Quick Setup Guide**:
 
-- For **Arch by the way** people
-```bash
-# 1. Clone this beauty
-git clone https://github.com/TheRootDaemon/dotfiles.git ~/dotfiles
-cd ~/dotfiles
+**To Do:**
 
-# 2. Run the magic scripts
-./scripts/yay.sh         # Install yay
-./scripts/neovim.sh      # Install neovim & family
-./scripts/tmux.sh        # Install tmux, tpm
-./scripts/zsh.sh         # Install zsh, zsh-antidote, thefuck, tldr
-./scripts/utils.sh       # Install the Utils fonts and stuff
-./scripts/symlinks.sh    # Connect the dots
-./scripts/bloat.sh       # Remove some bloatware
-```
-
-- For the **WSL** guys who got stuck with hell. I've been there too :)
-```bash
-# Before doing this make sure you have created users with proper permissions
-git clone https://github.com/TheRootDaemon/dotfiles.git ~/dotfiles
-cd ~/dotfiles
-
-./scripts/yay.sh
-./scripts/neovim.sh
-./scripts/tmux.sh
-./scripts/zsh.sh
-./scripts/symlinks.sh
-```
-
-Also here are the [keymaps](KEYMAPS.md) that I use.
+- [x] Configure `vim.lsp`
+- [x] Configure `vim.pack`
+- [ ] Configure Formatters
+- [ ] Configure swaync
+- [ ] Configure Waybar
+- [ ] Configure hypr
+- [ ] Refactor Scripts
+- [ ] Update Readme
 
 ---
-**Manual Symlink Setup (For the Control Freaks)**:<br>
 
-If you don't trust my scripts (fair enough), here's the manual way:
-```bash
-ln -s {path/to/dots} {destination/to/dots}
-```
-
-Here's an example:
-```bash
-ln -s ~/dotfiles/nvim ~/.config/nvim
-```
-
----
 **Contributing**:
 
 Found a bug? Of course there are bugs. Want to start an argument? Perfect.

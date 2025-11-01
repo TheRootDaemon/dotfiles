@@ -1,8 +1,9 @@
 # History & other configs
-HISTFILE=~/.zsh_history
+setopt nomatch
 HISTSIZE=100000
 SAVEHIST=500000
-setopt nomatch
+HISTFILE=~/.zsh_history
+export SUDO_EDITOR=nvim
 
 # Source dots
 for dot in "$HOME"/dotfiles/zsh/*.sh; do
@@ -22,7 +23,5 @@ fi
 source ${zsh_plugins}.zsh
 
 # Startup
-eval $(thefuck --alias)
-eval $(thefuck --alias fuck)
 eval "$(oh-my-posh init zsh --config ~/dotfiles/oh-my-posh.json)"
 echo ""
