@@ -5,6 +5,7 @@
 @define-color teal #94e2d5;
 @define-color peach #ff79c6;
 @define-color mauve #cba6f7;
+@define-color alt-mauve #c6a0f6;
 @define-color maroon #eba0ac;
 @define-color health #39ff14;
 @define-color lavender #b4befe;
@@ -24,7 +25,7 @@ window#waybar {
 }
 
 #workspaces {
-  margin-left: 15rem;
+  margin-left: 12rem;
 }
 
 #workspaces button {
@@ -43,6 +44,7 @@ window#waybar {
   border-radius: 100px;
 }
 
+#window,
 #tray,
 #clock,
 #battery,
@@ -51,6 +53,11 @@ window#waybar {
   margin: 0 5px;
   padding: 0 10px;
   border-radius: 100px;
+}
+
+#window {
+  color: @mauve;
+  background: @moon;
 }
 
 #clock {
@@ -73,7 +80,7 @@ window#waybar {
 }
 
 #battery {
-  margin-right: 15rem;
+  margin-right: 12rem;
   color: @health;
   background: @half-moon;
 }
@@ -90,4 +97,10 @@ window#waybar {
 
 #battery.critical {
   color: @peach;
+}
+
+#tray menu {
+  border-radius: 12px;
+  color: @dawn;
+  background: @moon;
 }

@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "margin-top": 5,
-  "modules-left": ["hyprland/workspaces"],
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
   "modules-center": ["clock"],
   "modules-right": ["tray", "network", "pulseaudio", "battery"],
   "hyprland/workspaces": {
@@ -9,6 +9,10 @@
     "persistent-workspaces": {
       "*": 6,
     },
+  },
+  "hyprland/window": {
+    "max-length": 40,
+    "seperate-outputs": false,
   },
   "clock": {
     "format": "{:%b %d %a %H:%M}",
@@ -21,16 +25,16 @@
     "tooltip": false,
     "interface": "wlan0",
     "format": "{ifname}",
-    "format-wifi": "{signalStrength}% ",
-    "format-ethernet": "{cidr} ",
+    "format-wifi": " {signalStrength}%",
+    "format-ethernet": " {cidr}",
     "format-disconnected": "",
     "on-click": "nmgui",
     "max-length": 50,
   },
   "pulseaudio": {
     "tooltip": false,
-    "format": "{volume}% {icon}",
-    "format-bluetooth": "{volume}% {icon}",
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
     "format-muted": "󰣼",
     "format-icons": {
       "headset": "",
@@ -48,9 +52,9 @@
       "critical": 15,
     },
     "format": "{capacity}% {icon}",
-    "format-charging": "{capacity}% {icon} 󱐋",
-    "format-warning": "{capacity}% {icon} !",
-    "format-critical": "{capacity}% {icon} ",
+    "format-charging": "{icon} {capacity}% 󱐋",
+    "format-warning": "{icon} {capacity}% !",
+    "format-critical": "{icon} {capacity}% ",
     "format-icons": ["󰁺", "󰁻", "󰁼", "󰁾", "󰁾", "󰂀", "󰂁", "󱈑"],
     "events": {
       "on-discharging-warning": "notify-send 'Consider plugging me in, take a stroll bring the adapter.'",

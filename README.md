@@ -28,9 +28,9 @@ Spending **69 hours** configuring your terminal to save **3 seconds per day** is
 - [x] Configure `vim.lsp`
 - [x] Configure `vim.pack`
 - [ ] Configure Formatters
-- [ ] Configure swaync
-- [ ] Configure Waybar
-- [ ] Configure hypr
+- [x] Configure swaync
+- [x] Configure Waybar
+- [x] Configure hypr
 - [ ] Refactor Scripts
 - [ ] Update Readme
 

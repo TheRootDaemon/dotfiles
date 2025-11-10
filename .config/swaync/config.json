@@ -1,0 +1,46 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "positionX": "center",
+  "positionY": "top",
+  "cssPriority": "user",
+  "layer": "overlay",
+  "control-center-layer": "top",
+  "layer-shell": true,
+  "control-center-width": 700,
+  "control-center-height": 600,
+  "control-center-margin-top": 10,
+  "control-center-margin-bottom": 10,
+  "control-center-margin-right": 10,
+  "control-center-margin-left": 0,
+  "notification-window-width": 700,
+  "notification-icon-size": 50,
+  "notification-body-image-height": 400,
+  "notification-body-image-width": 400,
+  "timeout": 8,
+  "ignore-gtk-theme": true,
+  "timeout-low": 6,
+  "timeout-critical": 0,
+  "fit-to-screen": false,
+  "keyboard-shortcuts": true,
+  "image-visibility": "when-available",
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": true,
+  "text-empty": "No Notifications",
+  "script-fail-notify": true,
+  "notification-visibility": {
+    "example-name": {
+      "state": "enabled",
+      "urgency": "Low",
+      "app-name": "Spotify"
+    }
+  },
+  "widgets": ["title", "notifications"],
+  "widget-config": {
+    "title": {
+      "text": "Notifications Center",
+      "clear-all-button": true,
+      "button-text": " 󰆴 "
+    }
+  }
+}

@@ -5,20 +5,27 @@ set -e
 dotfiles="$HOME/dotfiles"
 
 declare -A symlinks=(
-    ["ghostty"]="$HOME/.config/ghostty"
-    ["hypr"]="$HOME/.config/hypr"
+    # terminal emulators
     ["kitty"]="$HOME/.config/kitty"
+    ["ghostty"]="$HOME/.config/ghostty"
+
+    # dev env
     ["nvim"]="$HOME/.config/nvim"
     ["tmux"]="$HOME/.config/tmux"
-    ["yazi"]="$HOME/.config/yazi"
-    ["zshrc"]="$HOME/.zshrc"
-    ["zsh_plugins.txt"]="$HOME/.zsh_plugins.txt"
+    [".zshrc"]="$HOME/.zshrc"
+    [".zsh_plugins.txt"]="$HOME/.zsh_plugins.txt"
+
+    # window manager
+    ["hypr"]="$HOME/.config/hypr"
+    ["rofi"]="$HOME/.config/rofi"
+    ["waybar"]="$HOME/.config/waybar"
+    ["swaync"]="$HOME/.config/swaync"
 )
 
 for src in "${!symlinks[@]}"; do
     destination="${symlinks[$src]}"
-    source="$dotfiles/$src"
-    
+    source="$dotfiles/.config/$src"
+
     echo ""
     echo -n "Create symlink '$src'->'$destination' ? [Y/n]: "
     read -r response

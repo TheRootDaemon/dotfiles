@@ -4,6 +4,7 @@ compose() {
     STOP=false
     CLEAN=false
     RECREATE=false
+    PURGE=false
 
     while [[ $# -gt 0 ]]; do
         case "$1" in
@@ -18,17 +19,25 @@ compose() {
         -c | --clean)
             CLEAN=true
             ;;
+        -C | --lazy-clean)
+            STOP=true
+            CLEAN=true
+            ;;
         -r | --recreate)
             RECREATE=true
+            ;;
+        -p | --purge)
+            PURGE=true
             ;;
         -h | --help)
             echo "Usage: compose {{options}}"
             echo
             echo "Options:"
-            echo "  -f, --force       Stop, prune, and rebuild images before starting"
-            echo "  -s, --stop        Stop containers and prune (no rebuild)"
-            echo "  -c, --clean       Prune dangling containers/images only"
+            echo "  -s, --stop        Stop the containers"
+            echo "  -c, --clean       Prune dangling containers/images"
+            echo "  -C, --lazy-clean  Stop and prune dangling containers/images"
             echo "  -r, --recreate    Rebuild images and recreate containers"
+            echo "  -f, --force       Stop, prune, and rebuild images before starting"
             echo
             return 0
             ;;
@@ -40,6 +49,14 @@ compose() {
         esac
         shift
     done
+
+    if $PURGE; then
+        echo "Purging..."
+        echo ""
+        echo ""
+        docker system prune -a --volumes -f
+        return 0
+    fi
 
     if $STOP; then
         echo "Stopping containers..."

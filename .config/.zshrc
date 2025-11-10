@@ -6,7 +6,7 @@ HISTFILE=~/.zsh_history
 export SUDO_EDITOR=nvim
 
 # Source dots
-for dot in "$HOME"/dotfiles/zsh/*.sh; do
+for dot in "$HOME"/dotfiles/.config/zsh/*.sh; do
     source "$dot"
 done
 
@@ -23,5 +23,5 @@ fi
 source ${zsh_plugins}.zsh
 
 # Startup
-eval "$(oh-my-posh init zsh --config ~/dotfiles/oh-my-posh.json)"
+eval "$(oh-my-posh init zsh --config ~/dotfiles/.config/oh-my-posh.json)"
 echo ""
