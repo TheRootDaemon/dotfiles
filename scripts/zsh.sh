@@ -3,7 +3,9 @@
 set -e
 
 sudo pacman -S --needed --noconfirm zsh \
-    tldr
+    tldr \
+    tree \
+    tmux
 
 yay -S --needed --noconfirm \
     zsh-antidote
@@ -11,4 +13,4 @@ yay -S --needed --noconfirm \
 curl -s https://ohmyposh.dev/install.sh | bash -s
 
 sleep 1
-echo "Installed tldr, zsh, zsh-antidote"
+echo "Installed tldr, tree, tmux, zsh, zsh-antidote"
