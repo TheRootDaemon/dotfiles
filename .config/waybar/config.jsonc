@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "margin-top": 5,
-  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
   "modules-right": ["tray", "network", "pulseaudio", "battery"],
   "hyprland/workspaces": {
@@ -9,10 +9,6 @@
     "persistent-workspaces": {
       "*": 6,
     },
-  },
-  "hyprland/window": {
-    "max-length": 40,
-    "seperate-outputs": false,
   },
   "clock": {
     "format": "{:%b %d %a %H:%M}",
@@ -55,7 +51,7 @@
     "format-charging": "{icon} {capacity}% 󱐋",
     "format-warning": "{icon} {capacity}% !",
     "format-critical": "{icon} {capacity}% ",
-    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁾", "󰁾", "󰂀", "󰂁", "󱈑"],
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁾", "󱈑"],
     "events": {
       "on-discharging-warning": "notify-send 'Consider plugging me in, take a stroll bring the adapter.'",
       "on-discharging-critical": "notify-send 'Lazy Bastard, plug me in right away. I am gonna die soon.'",

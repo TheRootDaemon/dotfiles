@@ -20,7 +20,7 @@
   font-family: "JetBrainsMono Nerd Font Propo";
 }
 
-window#waybar {
+#waybar {
   background: transparent;
 }
 
@@ -44,7 +44,6 @@ window#waybar {
   border-radius: 100px;
 }
 
-#window,
 #tray,
 #clock,
 #battery,
@@ -53,11 +52,6 @@ window#waybar {
   margin: 0 5px;
   padding: 0 10px;
   border-radius: 100px;
-}
-
-#window {
-  color: @mauve;
-  background: @moon;
 }
 
 #clock {

@@ -8,6 +8,7 @@ declare -A symlinks=(
     # terminal emulators
     ["kitty"]="$HOME/.config/kitty"
     ["ghostty"]="$HOME/.config/ghostty"
+    [".wezterm.lua"]="$HOME/.wezterm.lua"
 
     # dev env
     ["nvim"]="$HOME/.config/nvim"
