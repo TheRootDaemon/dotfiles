@@ -3,7 +3,7 @@ theme = Catppuccin Mocha
 
 font-size = 17
 font-feature = "-calt, -liga, -dlig"
-font-family = "JetBrainsMono Nerd Font"
+font-family = "FiraCode Nerd Font"
 
 cursor-style = "block"
 cursor-style-blink = false

@@ -13,6 +13,7 @@ declare -A symlinks=(
     # dev env
     ["nvim"]="$HOME/.config/nvim"
     ["tmux"]="$HOME/.config/tmux"
+    ["fastfetch"]="$HOME/.config/fastfetch"
     [".zshrc"]="$HOME/.zshrc"
     [".zsh_plugins.txt"]="$HOME/.zsh_plugins.txt"
 

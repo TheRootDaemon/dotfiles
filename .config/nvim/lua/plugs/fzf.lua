@@ -3,9 +3,7 @@ require("fzf-lua").setup({
         width = 0.90,
         height = 0.90,
         backdrop = 100,
-        border = "none",
         preview = {
-            border = "none",
             horizontal = "right:65%",
         },
     },

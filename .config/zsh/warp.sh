@@ -1,4 +1,4 @@
-x() {
+warp() {
     case "$1" in
     "")
         tmux ls 2>/dev/null || echo "No active tmux sessions."
@@ -20,22 +20,22 @@ x() {
         fi
         tmux attach -t "$2"
         ;;
-    k | kill)
+    p | purge)
         tmux kill-server
         ;;
     h | help)
-        echo "Usage: x {{option}} {{session_name}}"
+        echo "Usage: warp {{option}} {{session_name}}"
         echo
         echo "Options:"
-        echo "  (no flag)               List tmux sessions"
+        echo "  (no flag)            List tmux sessions"
         echo "  n, new {{name}}      Create new tmux session"
         echo "  c, connect {{name}}  Connect to existing session"
-        echo "  k, kill              Kill tmux server (all sessions)"
+        echo "  p, purge             Kill tmux server (all sessions)"
         echo "  h, help              Show this help message"
         ;;
     *)
-        echo "Unknown option: $1"
-        echo "Try 'x {{h|help}}' for help."
+        echo "Invalid opt !"
+        echo "Try 'warp {{h|help}}' for help."
         return 1
         ;;
     esac

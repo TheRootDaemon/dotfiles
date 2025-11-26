@@ -1,6 +1,6 @@
 vim.opt.mouse = "a"
 vim.g.mapleader = " "
-vim.o.guicursor = ""
+vim.opt.guicursor = ""
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
@@ -34,13 +34,14 @@ vim.g.have_nerd_font = true
 vim.g.netrw_banner = 0
 
 -- Some essentials
-vim.keymap.set("n", "<leader>w", "<CMD>:w<CR>")
+vim.keymap.set("n", "<leader>Q", "<CMD>:q<CR>")
 vim.keymap.set("n", "<leader>q", "<CMD>:q<CR>")
 vim.keymap.set("n", "<leader>wq", "<CMD>:wqa<CR>")
 vim.keymap.set("n", "<leader>so", "<CMD>:source %<CR>")
 vim.keymap.set("n", "<leader>l", "<CMD>:.lua<CR>")
 vim.keymap.set("n", "<leader>U", "<CMD>:lua vim.pack.update()<CR>")
 
+-- Clipboard opts
 vim.keymap.set("n", "<leader>yy", '"+yy')
 vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set({ "n", "v" }, "<leader>p", '"+p')

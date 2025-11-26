@@ -9,7 +9,7 @@ vim.pack.add({
     "https://github.com/ibhagwan/fzf-lua",
     "https://github.com/stevearc/oil.nvim",
     "https://github.com/numToStr/Comment.nvim",
-    "https://github.com/akinsho/bufferline.nvim",
+    "https://github.com/nvim-lualine/lualine.nvim",
 
     -- LSPs
     "https://github.com/neovim/nvim-lspconfig",

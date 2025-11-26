@@ -12,10 +12,12 @@ sudo pacman -S --needed --noconfirm \
     xdg-desktop-portal-gtk \
     rofi \
     pavucontrol \
+    wlsunset \
     waybar
 
 yay -S --needed --noconfirm \
-    nmgui-bin
+    nmgui-bin \
+    wlogout
 
 sleep 1
 echo "Installed hyprland and its utilities"
