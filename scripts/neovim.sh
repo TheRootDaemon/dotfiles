@@ -14,17 +14,24 @@ sudo pacman -S --needed --noconfirm \
 sudo pacman -S --needed --noconfirm \
     bash-language-server \
     lua-language-server \
+    clang \
     gopls \
     typescript-language-server \
     svelte-language-server \
     tailwindcss-language-server \
-    pyright
+    pyright \
+    yaml-language-server \
+    vscode-css-languageserver \
+    vscode-json-languageserver \
+    vscode-html-languageserver
 
 sudo pacman -S --needed --noconfirm \
     stylua \
     shfmt \
     gofumpt \
-    prettier
+    prettier \
+    python-black \
+    python-isort
 
 sudo npm install -g neovim
 

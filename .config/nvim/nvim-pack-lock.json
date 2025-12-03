@@ -29,6 +29,10 @@
       "rev": "e9fa071",
       "src": "https://github.com/nvim-mini/mini.indentscope"
     },
+    "neovim": {
+      "rev": "cf2a288",
+      "src": "https://github.com/rose-pine/neovim"
+    },
     "nvim": {
       "rev": "8c4125e",
       "src": "https://github.com/catppuccin/nvim"

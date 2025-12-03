@@ -1,5 +1,5 @@
 <div align="center">
- <img src="dotfiles.png" height="200">
+ <img src="./assets/dotfiles.png" height="500">
 </div>
 
 <p align="center">
@@ -20,19 +20,6 @@
 Welcome to my carefully curated collection of configurations that make my machine do exactly what I want, when I want it. This is my home, messy in some corners, but perfectly organized where it counts.
 
 Spending **69 hours** configuring your terminal to save **3 seconds per day** is totally worth it.
-
----
-
-**To Do:**
-
-- [x] Configure `vim.lsp`
-- [x] Configure `vim.pack`
-- [ ] Configure Formatters
-- [x] Configure swaync
-- [x] Configure Waybar
-- [x] Configure hypr
-- [ ] Refactor Scripts
-- [ ] Update Readme
 
 ---
 

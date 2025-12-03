@@ -16,12 +16,6 @@ declare -A symlinks=(
     ["fastfetch"]="$HOME/.config/fastfetch"
     [".zshrc"]="$HOME/.zshrc"
     [".zsh_plugins.txt"]="$HOME/.zsh_plugins.txt"
-
-    # window manager
-    ["hypr"]="$HOME/.config/hypr"
-    ["rofi"]="$HOME/.config/rofi"
-    ["waybar"]="$HOME/.config/waybar"
-    ["swaync"]="$HOME/.config/swaync"
 )
 
 for src in "${!symlinks[@]}"; do

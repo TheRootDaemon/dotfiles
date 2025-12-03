@@ -2,7 +2,7 @@ local daemon = require("core.helpers")
 
 require("lualine").setup({
     options = {
-        theme = "catppuccin",
+        theme = "rose-pine",
         component_separators = "",
         section_separators = { right = "", left = "" },
         icons_enabled = false,

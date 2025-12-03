@@ -1,5 +1,6 @@
 vim.pack.add({
     "https://github.com/catppuccin/nvim",
+    "https://github.com/rose-pine/neovim",
 
     -- Dependencies
     "https://github.com/nvim-tree/nvim-web-devicons",

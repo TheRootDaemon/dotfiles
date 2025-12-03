@@ -1,7 +1,10 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
-config.color_scheme = "Tokyo Night"
+local catppuccin = wezterm.color.get_builtin_schemes()["Catppuccin Mocha"]
+catppuccin.background = "191724"
+config.color_schemes = { ["catppuccin"] = catppuccin }
+config.color_scheme = "catppuccin"
 
 config.enable_tab_bar = false
 config.window_decorations = "TITLE | RESIZE"
@@ -12,7 +15,7 @@ config.window_padding = {
     bottom = 0,
 }
 
-config.font_size = 16
+config.font_size = 15
 config.font = wezterm.font("FiraCode Nerd Font")
 config.harfbuzz_features = { "calt = 0", "clig = 0", "liga = 0" }
 

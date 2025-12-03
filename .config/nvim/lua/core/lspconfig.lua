@@ -1,11 +1,16 @@
 vim.lsp.enable({
+    "clangd",
     "bashls",
     "lua_ls",
     "gopls",
+    "html",
+    "cssls",
     "ts_ls",
     "svelte",
     "tailwindcss",
     "pyright",
+    "yamlls",
+    "jsonls",
 })
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -37,10 +42,5 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 vim.diagnostic.config({
-    virtual_text = true,
-    severity_sort = true,
-    float = {
-        style = "minimal",
-    },
-    signs = true,
+    virtual_lines = true,
 })
