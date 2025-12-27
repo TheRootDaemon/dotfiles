@@ -1,9 +1,10 @@
 vim.opt.mouse = "a"
+vim.opt.ruler = false
 vim.g.mapleader = " "
 vim.opt.guicursor = ""
 vim.opt.number = true
-vim.opt.relativenumber = true
 vim.opt.cursorline = true
+vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 
 vim.opt.expandtab = true
@@ -48,7 +49,7 @@ vim.keymap.set({ "n", "v" }, "<leader>p", '"+p')
 
 -- Clear search highlight with <Esc>
 vim.keymap.set("n", "<Esc>", "<CMD>nohlsearch<CR>")
-vim.keymap.set("n", "<leader>f", ":%s/")
+vim.keymap.set("n", "<leader>h", ":%s/")
 
 -- Move selected lines up and down in visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -57,3 +58,14 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- Keep cursor centered when navigating search results
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+
+-- Annoying gotchas
+vim.cmd([[
+    cnoreabbrev W w
+    cnoreabbrev W q
+    cnoreabbrev Q! q!
+    cnoreabbrev Wq wq
+    cnoreabbrev WQ wq
+    cnoreabbrev Wqa wqa
+    cnoreabbrev WQA wqa
+]])

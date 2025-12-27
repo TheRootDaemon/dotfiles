@@ -1,9 +1,16 @@
 theme = Rose Pine
+background = 141415
+palette = 2=#3e8fb0
 
-font-size = 17
-font-feature = "-calt, -liga, -dlig"
-font-family = "FiraCode Nerd Font"
+font-size = 20
+font-family = "JetBrainsMono Nerd Font"
+
+fullscreen = true
+window-padding-x = 0, 0
+window-padding-y = 0, 0
+working-directory = "home"
+shell-integration-features = "ssh-env,no-cursor"
 
 cursor-style = "block"
 cursor-style-blink = false
-shell-integration-features = "ssh-env,no-cursor"
+mouse-hide-while-typing = true

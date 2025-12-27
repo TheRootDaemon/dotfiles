@@ -1,0 +1,37 @@
+[env]
+ENV = "xterm-256color"
+
+[general]
+import = [
+    "./palette.toml"
+]
+
+[cursor.style]
+shape = "block"
+blinking = "Never"
+
+[mouse]
+hide_when_typing = true
+
+[font]
+size = 20
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font"
+style = "Bold"
+
+[window]
+padding = { x = 0, y = 0 }
+startup_mode = "Fullscreen"

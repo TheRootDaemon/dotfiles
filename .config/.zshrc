@@ -24,4 +24,10 @@ source ${zsh_plugins}.zsh
 
 # Startup
 eval "$(oh-my-posh init zsh --config ~/dotfiles/.config/oh-my-posh.json)"
-echo ""
+
+# bun completions
+[ -s "/home/therootdaemon/.bun/_bun" ] && source "/home/therootdaemon/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

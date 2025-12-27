@@ -1,11 +1,7 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
-local catppuccin = wezterm.color.get_builtin_schemes()["Catppuccin Mocha"]
-catppuccin.background = "191724"
-config.color_schemes = { ["catppuccin"] = catppuccin }
-config.color_scheme = "catppuccin"
-
+config.color_scheme = "rose-pine"
 config.enable_tab_bar = false
 config.window_decorations = "TITLE | RESIZE"
 config.window_padding = {

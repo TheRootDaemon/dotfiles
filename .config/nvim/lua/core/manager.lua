@@ -1,8 +1,8 @@
 vim.pack.add({
-    "https://github.com/catppuccin/nvim",
-    "https://github.com/rose-pine/neovim",
+    "https://github.com/TheRootDaemon/rose-pine",
 
     -- Dependencies
+    "https://github.com/nvim-lua/plenary.nvim",
     "https://github.com/nvim-tree/nvim-web-devicons",
     "https://github.com/rafamadriz/friendly-snippets",
 
@@ -10,9 +10,10 @@ vim.pack.add({
     "https://github.com/ibhagwan/fzf-lua",
     "https://github.com/stevearc/oil.nvim",
     "https://github.com/numToStr/Comment.nvim",
-    "https://github.com/nvim-lualine/lualine.nvim",
+    "https://github.com/j-morano/buffer_manager.nvim",
 
     -- LSPs
+    "https://github.com/folke/trouble.nvim",
     "https://github.com/neovim/nvim-lspconfig",
     {
         src = "https://github.com/Saghen/blink.cmp",

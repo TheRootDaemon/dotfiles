@@ -1,11 +1,4 @@
-require("rose-pine").setup({
-    palette = {
-        main = {
-            base = "#191724",
-            surface = "#191724",
-            overlay = "#191724",
-        },
-    },
-})
+require("rose-pine").setup({})
+
 vim.cmd("colorscheme rose-pine")
 vim.cmd(":hi statusline guibg=NONE")
