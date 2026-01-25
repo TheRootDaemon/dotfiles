@@ -42,6 +42,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 vim.diagnostic.config({
-    severity_sort = true,
     signs = true,
+    severity_sort = true,
+    virtual_text = false,
 })

@@ -62,7 +62,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- Annoying gotchas
 vim.cmd([[
     cnoreabbrev W w
-    cnoreabbrev W q
+    cnoreabbrev Q q
     cnoreabbrev Q! q!
     cnoreabbrev Wq wq
     cnoreabbrev WQ wq

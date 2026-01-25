@@ -3,7 +3,7 @@ background = 141415
 palette = 2=#3e8fb0
 
 font-size = 20
-font-family = "JetBrainsMono Nerd Font"
+font-family = "FiraCode Nerd Font"
 
 fullscreen = true
 window-padding-x = 0, 0

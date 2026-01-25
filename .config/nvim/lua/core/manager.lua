@@ -10,11 +10,12 @@ vim.pack.add({
     "https://github.com/ibhagwan/fzf-lua",
     "https://github.com/stevearc/oil.nvim",
     "https://github.com/numToStr/Comment.nvim",
+    "https://github.com/lewis6991/gitsigns.nvim",
     "https://github.com/j-morano/buffer_manager.nvim",
 
     -- LSPs
-    "https://github.com/folke/trouble.nvim",
     "https://github.com/neovim/nvim-lspconfig",
+    "https://github.com/rachartier/tiny-inline-diagnostic.nvim",
     {
         src = "https://github.com/Saghen/blink.cmp",
         version = vim.version.range("1.*"),
