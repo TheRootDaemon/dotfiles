@@ -6,6 +6,7 @@ dotfiles="$HOME/dotfiles"
 
 declare -A symlinks=(
     # terminal emulators
+    ["alacritty"]="$HOME/.config/alacritty"
     ["kitty"]="$HOME/.config/kitty"
     ["ghostty"]="$HOME/.config/ghostty"
     [".wezterm.lua"]="$HOME/.wezterm.lua"
@@ -13,7 +14,6 @@ declare -A symlinks=(
     # dev env
     ["nvim"]="$HOME/.config/nvim"
     ["tmux"]="$HOME/.config/tmux"
-    ["fastfetch"]="$HOME/.config/fastfetch"
     [".zshrc"]="$HOME/.zshrc"
     [".zsh_plugins.txt"]="$HOME/.zsh_plugins.txt"
 )

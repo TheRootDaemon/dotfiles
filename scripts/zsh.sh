@@ -8,9 +8,8 @@ sudo pacman -S --needed --noconfirm zsh \
     tmux
 
 yay -S --needed --noconfirm \
-    zsh-antidote
-
-curl -s https://ohmyposh.dev/install.sh | bash -s
+    zsh-antidote \
+    oh-my-posh-bin
 
 sleep 1
 echo "Installed tldr, tree, tmux, zsh, zsh-antidote"

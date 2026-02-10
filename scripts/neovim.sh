@@ -8,6 +8,7 @@ sudo pacman -S --needed --noconfirm \
     luarocks \
     python-pynvim \
     fd \
+    fzf \
     git \
     neovim
 

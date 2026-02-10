@@ -3,6 +3,7 @@
 set -e
 
 yay -S --needed --noconfirm \
+    ttf-firacode-nerd \
     ttf-jetbrains-mono-nerd
 
 sudo pacman -S --needed --noconfirm \
@@ -11,7 +12,6 @@ sudo pacman -S --needed --noconfirm \
     noto-fonts-emoji \
     noto-fonts-extra \
     ttf-noto-nerd \
-    kitty \
     vlc \
     vlc-plugins-all
 
