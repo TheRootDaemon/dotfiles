@@ -40,7 +40,6 @@ vim.keymap.set("n", "<leader>q", "<CMD>:q<CR>")
 vim.keymap.set("n", "<leader>wq", "<CMD>:wqa<CR>")
 vim.keymap.set("n", "<leader>s", "<CMD>:source %<CR>")
 vim.keymap.set("n", "<leader>l", "<CMD>:.lua<CR>")
-vim.keymap.set("n", "<leader>U", "<CMD>:lua vim.pack.update()<CR>")
 
 -- Clipboard opts
 vim.keymap.set("n", "<leader>yy", '"+yy')

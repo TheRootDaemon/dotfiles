@@ -1,5 +1,5 @@
 vim.pack.add({
-    "https://github.com/TheRootDaemon/rose-pine",
+    "https://github.com/rose-pine/neovim",
 
     -- Dependencies
     "https://github.com/nvim-lua/plenary.nvim",

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#pkgs!/usr/bin/env bash
 
 bloats=(
     gnome-maps
@@ -12,11 +12,12 @@ bloats=(
     gnome-weather
     totem
     htop
+    vim
 )
 
 installed=()
 
-for pkg in "${pkgs[@]}"; do
+for pkg in "${bloats[@]}"; do
     if pacman -Qi "$pkg" &>/dev/null; then
         installed+=("$pkg")
     fi

@@ -28,6 +28,9 @@ eval "$(oh-my-posh init zsh --config ~/dotfiles/.config/oh-my-posh.json)"
 # bun completions
 [ -s "/home/therootdaemon/.bun/_bun" ] && source "/home/therootdaemon/.bun/_bun"
 
+# go
+export PATH=$PATH:$(go env GOPATH)/bin
+
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
