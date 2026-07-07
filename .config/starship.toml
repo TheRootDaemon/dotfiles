@@ -1,0 +1,35 @@
+format = """
+ $directory\
+$git_branch\
+$git_status\
+$character"""
+
+palette = "rose-pine"
+add_newline = false
+
+[palettes.rose-pine]
+love = "#eb6f92"
+rose = "#ebbcba"
+pine = "#31748f"
+foam = "#9ccfd8"
+iris = "#c4a7e7"
+
+[character]
+success_symbol = "[➜](bold foam) [:](bold foam)"
+error_symbol = "[➜](bold foam) [✗](bold love)"
+
+[directory]
+truncation_length = 5
+truncation_symbol = "../"
+truncate_to_repo = false
+style = "pine"
+read_only = " 🔒"
+
+[git_status]
+style = "bold iris"
+format = "([$all_status$ahead_behind]($style) )"
+
+[git_branch]
+symbol = "git"
+format = "[$symbol:\\([$branch](rose)\\)](text) "
+

@@ -23,7 +23,7 @@ fi
 source ${zsh_plugins}.zsh
 
 # Startup
-eval "$(oh-my-posh init zsh --config ~/dotfiles/.config/oh-my-posh.json)"
+eval "$(starship init zsh)"
 
 # bun completions
 [ -s "/home/therootdaemon/.bun/_bun" ] && source "/home/therootdaemon/.bun/_bun"

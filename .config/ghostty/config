@@ -1,9 +1,8 @@
 theme = Rose Pine
-background = 141415
-palette = 2=#3e8fb0
 
-font-size = 20
-font-family = "FiraCode Nerd Font"
+font-size = 15
+font-family = "MapleMono NF"
+font-feature = cv01, cv65, ss01, ss04, ss05, ss07
 
 fullscreen = true
 window-padding-x = 0, 0
