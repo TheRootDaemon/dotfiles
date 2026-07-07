@@ -11,7 +11,10 @@ vim.pack.add({
     "https://github.com/stevearc/oil.nvim",
     "https://github.com/numToStr/Comment.nvim",
     "https://github.com/lewis6991/gitsigns.nvim",
-    "https://github.com/j-morano/buffer_manager.nvim",
+    {
+        src = "https://github.com/ThePrimeagen/harpoon",
+        version = "harpoon2",
+    },
 
     -- LSPs
     "https://github.com/neovim/nvim-lspconfig",
