@@ -27,6 +27,7 @@ vim.pack.add({
     -- Formatters
     "https://github.com/stevearc/conform.nvim",
     "https://github.com/nvim-mini/mini.indentscope",
+    "https://github.com/nvim-treesitter/nvim-treesitter-context",
     {
         src = "https://github.com/nvim-treesitter/nvim-treesitter",
         version = "main",
