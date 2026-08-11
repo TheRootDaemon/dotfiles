@@ -3,7 +3,9 @@ name: frontend-a11y
 description: >
   Accessibility patterns for React and Next.js — semantic HTML, ARIA attributes,
   form labeling, keyboard navigation, focus management, and screen reader support.
-  Use when building any interactive UI component or form.
+  Use when building or reviewing ANY interactive UI component, form, modal,
+  dropdown, or icon button — or when a11y issues surface in code review or from
+  linters (eslint-plugin-jsx-a11y).
 ---
 
 # Frontend Accessibility Patterns
@@ -481,9 +483,3 @@ Before submitting any interactive component for review:
 - [ ] Modals restore focus on close (for full focus trapping with Tab/Shift+Tab cycling, use a library like `focus-trap-react`)
 - [ ] Dynamic content updates use `aria-live`
 - [ ] `prefers-reduced-motion` is respected for animations
-
-## Related Skills
-
-- `frontend-patterns` — general React component and state patterns
-- `design-system` — design token and component consistency
-- `motion-ui` — animation patterns with accessibility considerations

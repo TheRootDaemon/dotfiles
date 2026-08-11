@@ -120,3 +120,11 @@ Before finalizing, review your work against these checks:
 - Does the test name clearly communicate the behavior being validated?
 
 Always strive for tests that provide high confidence with low maintenance overhead.
+
+## Skill Routing
+
+Before writing tests, load the matching skill via the skill tool:
+
+- Go tests, benchmarks, or fuzzers → `idiomatic-go-testing`
+- React/Next.js component tests → `frontend-patterns`
+- Testing auth, payment, or user-input paths → `security-review`

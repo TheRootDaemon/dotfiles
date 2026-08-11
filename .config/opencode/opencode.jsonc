@@ -3,4 +3,14 @@
     "plugin": [
         "@dietrichgebert/ponytail"
     ],
+    "permission": {
+        "skill": {
+            "ponytail": "deny",
+            "ponytail-audit": "deny",
+            "ponytail-debt": "deny",
+            "ponytail-gain": "deny",
+            "ponytail-help": "deny",
+            "ponytail-review": "deny"
+        }
+    }
 }

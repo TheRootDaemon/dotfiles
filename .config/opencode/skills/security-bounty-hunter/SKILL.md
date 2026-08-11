@@ -1,6 +1,6 @@
 ---
 name: security-bounty-hunter
-description: Hunt for exploitable, bounty-worthy security issues in repositories. Focuses on remotely reachable vulnerabilities that qualify for real reports instead of noisy local-only findings.
+description: Hunt for exploitable, bounty-worthy security issues in repositories. Focuses on remotely reachable vulnerabilities that qualify for real reports instead of noisy local-only findings. Use when auditing a repo for exploitable vulnerabilities or preparing a disclosure/bounty report.
 ---
 
 # Security Bounty Hunter

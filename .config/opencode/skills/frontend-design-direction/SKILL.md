@@ -1,6 +1,6 @@
 ---
 name: frontend-design-direction
-description: Set an frontend design direction for production UI work. Use when building or improving websites, dashboards, applications, components, landing pages, visual tools, or any web UI that needs stronger product-specific design judgment.
+description: Set a frontend design direction for production UI work. Use when building or improving the LOOK of websites, dashboards, applications, components, landing pages, or any web UI — especially when the user asks for visual hierarchy, polish, or "make it less generic". Do NOT use for code patterns (use frontend-patterns) or accessibility (use frontend-a11y).
 ---
 
 # Frontend Design Direction

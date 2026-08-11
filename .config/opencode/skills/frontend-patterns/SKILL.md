@@ -1,6 +1,6 @@
 ---
 name: frontend-patterns
-description: Frontend development patterns for React, Next.js, state management, performance optimization, and UI best practices.
+description: React and Next.js development patterns — component composition, state management, data fetching, forms, performance, and code quality standards. Use when writing or reviewing React/Next.js component code, state management, data fetching, forms, or performance work. Do NOT use for visual design (use frontend-design-direction) or accessibility (use frontend-a11y).
 ---
 
 # Frontend Development Patterns
@@ -576,81 +576,65 @@ export function Modal({ isOpen, onClose, children }: ModalProps) {
 }
 ```
 
-## Accessibility Patterns
+## Code Quality Standards
 
-### Keyboard Navigation
+### Naming
 
 ```typescript
-export function Dropdown({ options, onSelect }: DropdownProps) {
-  const [isOpen, setIsOpen] = useState(false)
-  const [activeIndex, setActiveIndex] = useState(0)
+// PASS: Descriptive names, verb-noun functions, boolean prefixes
+const marketSearchQuery = "election";
+const isUserAuthenticated = true;
+async function fetchMarketData(marketId: string) {}
+function isValidEmail(email: string): boolean {}
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    switch (e.key) {
-      case 'ArrowDown':
-        e.preventDefault()
-        setActiveIndex(i => Math.min(i + 1, options.length - 1))
-        break
-      case 'ArrowUp':
-        e.preventDefault()
-        setActiveIndex(i => Math.max(i - 1, 0))
-        break
-      case 'Enter':
-        e.preventDefault()
-        onSelect(options[activeIndex])
-        setIsOpen(false)
-        break
-      case 'Escape':
-        setIsOpen(false)
-        break
-    }
-  }
+// FAIL: Unclear names
+const q = "election";
+function market(id: string) {}
+```
 
-  return (
-    <div
-      role="combobox"
-      aria-expanded={isOpen}
-      aria-haspopup="listbox"
-      onKeyDown={handleKeyDown}
-    >
-      {/* Dropdown implementation */}
-    </div>
-  )
+### Immutability
+
+```typescript
+// PASS: ALWAYS spread — never mutate
+const updatedUser = { ...user, name: "New Name" };
+const updatedArray = [...items, newItem];
+
+// FAIL: NEVER mutate directly
+user.name = "New Name";
+items.push(newItem);
+```
+
+### Error Handling
+
+```typescript
+// PASS: Check response.ok, throw with context
+async function fetchData(url: string) {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+  return response.json();
+}
+
+// FAIL: No error handling
+async function fetchData(url) {
+  return fetch(url).then(r => r.json());
 }
 ```
 
-### Focus Management
+### Comments: Why, Not What
 
 ```typescript
-export function Modal({ isOpen, onClose, children }: ModalProps) {
-  const modalRef = useRef<HTMLDivElement>(null)
-  const previousFocusRef = useRef<HTMLElement | null>(null)
+// PASS: Explains WHY
+// Use exponential backoff to avoid overwhelming the API during outages
+const delay = Math.min(1000 * Math.pow(2, retryCount), 30000);
 
-  useEffect(() => {
-    if (isOpen) {
-      // Save currently focused element
-      previousFocusRef.current = document.activeElement as HTMLElement
-
-      // Focus modal
-      modalRef.current?.focus()
-    } else {
-      // Restore focus when closing
-      previousFocusRef.current?.focus()
-    }
-  }, [isOpen])
-
-  return isOpen ? (
-    <div
-      ref={modalRef}
-      role="dialog"
-      aria-modal="true"
-      tabIndex={-1}
-      onKeyDown={e => e.key === 'Escape' && onClose()}
-    >
-      {children}
-    </div>
-  ) : null
-}
+// FAIL: States the obvious
+count++; // Increment counter by 1
 ```
+
+### Code Smells to Avoid
+
+- **Deep nesting**: prefer early returns (`if (!user) return;`)
+- **Magic numbers**: use named constants (`MAX_RETRIES`, `DEBOUNCE_DELAY_MS`)
+- **Long functions**: split into smaller named functions
 
 **Remember**: Modern frontend patterns enable maintainable, performant user interfaces. Choose patterns that fit your project complexity.
