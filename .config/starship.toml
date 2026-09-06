@@ -1,5 +1,6 @@
 format = """
- $directory\
+ [➜](bold foam) \
+$directory\
 $git_branch\
 $git_status\
 $character"""
@@ -15,8 +16,8 @@ foam = "#9ccfd8"
 iris = "#c4a7e7"
 
 [character]
-success_symbol = "[➜](bold foam) [:](bold foam)"
-error_symbol = "[➜](bold foam) [✗](bold love)"
+success_symbol = "[:](bold foam)"
+error_symbol = "[✗](bold love)"
 
 [directory]
 truncation_length = 5
@@ -27,9 +28,12 @@ read_only = " 🔒"
 
 [git_status]
 style = "bold iris"
+ahead = "+"
+behind = "-"
+staged = "#"
+conflicted = "~"
 format = "([$all_status$ahead_behind]($style) )"
 
 [git_branch]
 symbol = "git"
 format = "[$symbol:\\([$branch](rose)\\)](text) "
-
