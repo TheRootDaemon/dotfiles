@@ -5,6 +5,8 @@ require("conform").setup({
         c = { "clang_format" },
         cpp = { "clang_format" },
         go = { "gofumpt" },
+        zig = { "zigfmt" },
+        proto = { "buf" },
         javascript = { "prettier" },
         typescript = { "prettier" },
         python = { "black", "isort" },

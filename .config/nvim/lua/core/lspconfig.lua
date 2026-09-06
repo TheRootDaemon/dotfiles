@@ -1,8 +1,10 @@
 vim.lsp.enable({
     "clangd",
     "bashls",
+    "buf_ls",
     "lua_ls",
     "gopls",
+    "zls",
     "html",
     "cssls",
     "ts_ls",
@@ -13,8 +15,13 @@ vim.lsp.enable({
     "jsonls",
 })
 
+-- builds the capabilities of the LSP servers,
+-- starts with the neovim's default
+-- and extends it through blink.cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities({}, false))
+
+-- enables code folding
 capabilities = vim.tbl_deep_extend("force", capabilities, {
     textDocument = {
         foldingRange = {
@@ -24,6 +31,8 @@ capabilities = vim.tbl_deep_extend("force", capabilities, {
     },
 })
 
+-- enables builtin LSP completions
+-- when attached to the appropriate LSP servers
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(env)
         local client = vim.lsp.get_client_by_id(env.data.client_id)
@@ -34,6 +43,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end,
 })
 
+-- autocommand to format the buffer before saving
 vim.api.nvim_create_autocmd("BufWritePre", {
     group = vim.api.nvim_create_augroup("LspFormatOnSave", { clear = true }),
     callback = function()

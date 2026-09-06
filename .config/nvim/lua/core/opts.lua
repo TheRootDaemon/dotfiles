@@ -3,7 +3,6 @@ vim.opt.ruler = false
 vim.g.mapleader = " "
 vim.opt.guicursor = ""
 vim.opt.number = true
-vim.opt.cursorline = true
 vim.opt.relativenumber = true
 vim.opt.termguicolors = true
 
