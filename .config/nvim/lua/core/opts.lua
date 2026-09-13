@@ -67,10 +67,10 @@ vim.keymap.set("n", "<M-k>", "<C-w>k")
 vim.keymap.set("n", "<M-l>", "<C-w>l")
 
 -- resize panes
-vim.keymap.set("n", "<M-H>", "<C-w>2<")
-vim.keymap.set("n", "<M-J>", "<C-w>2+")
-vim.keymap.set("n", "<M-K>", "<C-w>2-")
-vim.keymap.set("n", "<M-L>", "<C-w>2>")
+vim.keymap.set("n", "<M-H>", "<C-w>2>")
+vim.keymap.set("n", "<M-J>", "<C-w>2-")
+vim.keymap.set("n", "<M-K>", "<C-w>2+")
+vim.keymap.set("n", "<M-L>", "<C-w>2<")
 
 -- annoying motions
 vim.cmd([[
