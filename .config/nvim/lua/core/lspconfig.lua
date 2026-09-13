@@ -5,6 +5,7 @@ vim.lsp.enable({
     "lua_ls",
     "gopls",
     "zls",
+    "nixd",
     "html",
     "cssls",
     "ts_ls",
@@ -43,16 +44,28 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end,
 })
 
--- autocommand to format the buffer before saving
-vim.api.nvim_create_autocmd("BufWritePre", {
-    group = vim.api.nvim_create_augroup("LspFormatOnSave", { clear = true }),
-    callback = function()
-        vim.lsp.buf.format({ async = false })
-    end,
-})
-
+-- diagnostics are minimal, since it is extended by a plugin
 vim.diagnostic.config({
     signs = true,
     severity_sort = true,
     virtual_text = false,
+})
+
+-- controls auto formatting on save
+local format_on_save = true
+
+-- toggles format_on_save
+vim.keymap.set("n", "<leader>tf", function()
+    format_on_save = not format_on_save
+    vim.notify("Format on save " .. (format_on_save and "enabled" or "disabled"))
+end)
+
+-- autocommand to format the buffer before saving
+vim.api.nvim_create_autocmd("BufWritePre", {
+    group = vim.api.nvim_create_augroup("LspFormatOnSave", { clear = true }),
+    callback = function()
+        if format_on_save then
+            vim.lsp.buf.format({ async = false })
+        end
+    end,
 })
