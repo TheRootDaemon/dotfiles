@@ -1,0 +1,22 @@
+services:
+  nvim:
+    container_name: nvim
+
+    build:
+      context: ../..
+      dockerfile: packages/nvim/Dockerfile
+
+    command: nvim
+    working_dir: /root/.config/nvim
+
+    volumes:
+      - ../../.config/nvim:/root/.config/nvim
+      - neovim-data:/root/.local/share/nvim
+      - neovim-state:/root/.local/state/nvim
+
+    tty: true
+    stdin_open: true
+
+volumes:
+  neovim-data:
+  neovim-state:
