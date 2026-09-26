@@ -1,38 +1,35 @@
 vim.pack.add({
+    -- colorscheme
     "https://github.com/rose-pine/neovim",
 
-    -- Dependencies
-    "https://github.com/nvim-lua/plenary.nvim",
-    "https://github.com/nvim-tree/nvim-web-devicons",
+    -- completion(s) and autosuggestions
     "https://github.com/L3MON4D3/LuaSnip",
     "https://github.com/rafamadriz/friendly-snippets",
+    { src = "https://github.com/Saghen/blink.cmp", version = vim.version.range("1.*") },
 
-    -- Utilities
-    "https://github.com/ibhagwan/fzf-lua",
-    "https://github.com/stevearc/oil.nvim",
-    "https://github.com/numToStr/Comment.nvim",
-    "https://github.com/lewis6991/gitsigns.nvim",
-    {
-        src = "https://github.com/ThePrimeagen/harpoon",
-        version = "harpoon2",
-    },
-
-    -- LSPs
+    -- LSP
     "https://github.com/neovim/nvim-lspconfig",
+    "https://github.com/numToStr/Comment.nvim",
     "https://github.com/rachartier/tiny-inline-diagnostic.nvim",
-    {
-        src = "https://github.com/Saghen/blink.cmp",
-        version = vim.version.range("1.*"),
-    },
-
-    -- Formatters
     "https://github.com/stevearc/conform.nvim",
-    "https://github.com/nvim-mini/mini.indentscope",
-    "https://github.com/nvim-treesitter/nvim-treesitter-context",
-    {
-        src = "https://github.com/nvim-treesitter/nvim-treesitter",
-        version = "main",
-    },
+    { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+
+    -- ui
+    "https://github.com/nvim-lualine/lualine.nvim",
+    "https://github.com/folke/snacks.nvim",
+    "https://github.com/folke/noice.nvim",
+    "https://github.com/folke/which-key.nvim",
+
+    -- utilities
+    "https://github.com/ibhagwan/fzf-lua",
+    "https://github.com/lewis6991/gitsigns.nvim",
+    "https://github.com/stevearc/oil.nvim",
+    { src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
+
+    -- transitive dependencies
+    "https://github.com/nvim-lua/plenary.nvim",
+    "https://github.com/nvim-tree/nvim-web-devicons",
+    "https://github.com/MunifTanjim/nui.nvim",
 })
 
 local plugs = vim.fn.stdpath("config") .. "/lua/plugs"

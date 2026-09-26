@@ -1,12 +1,8 @@
 require("fzf-lua").setup({
     winopts = {
         backdrop = 0,
-        border = "none",
         fullscreen = true,
-        preview = {
-            border = "none",
-            horizontal = "right:65%",
-        },
+        preview = { horizontal = "right:65%" },
     },
 })
 
