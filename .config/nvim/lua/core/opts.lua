@@ -1,3 +1,4 @@
+-- general configs
 vim.opt.mouse = "a"
 vim.opt.ruler = false
 vim.g.mapleader = " "
@@ -26,11 +27,22 @@ vim.opt.smartcase = true
 -- keep 8 lines visible above/below the cursor
 vim.opt.scrolloff = 8
 vim.opt.wrap = true
+vim.opt.linebreak = true
 vim.opt.breakindent = true
 
--- file Handling
+-- when substituting preview changes in a split
+vim.opt.inccommand = "split"
+
+-- persist undo history
+vim.opt.undofile = true
+
+-- file handling
 vim.opt.swapfile = false
 vim.opt.backup = false
+
+-- responsiveness
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 400
 
 -- some essentials
 vim.keymap.set("n", "<leader>Q", "<CMD>:q<CR>")
@@ -59,6 +71,16 @@ vim.keymap.set("n", "N", "Nzzzv")
 -- splits
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+vim.opt.splitkeep = "screen"
+
+-- display
+vim.opt.signcolumn = "yes"
+vim.opt.list = true
+vim.opt.listchars = {
+	tab = "-> ",
+	trail = "·",
+	nbsp = "␣",
+}
 
 -- motions for panes
 vim.keymap.set("n", "<leader>h", "<C-w>h")
