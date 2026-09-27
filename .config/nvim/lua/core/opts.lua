@@ -30,9 +30,6 @@ vim.opt.wrap = true
 vim.opt.linebreak = true
 vim.opt.breakindent = true
 
--- when substituting preview changes in a split
-vim.opt.inccommand = "split"
-
 -- persist undo history
 vim.opt.undofile = true
 
@@ -77,9 +74,9 @@ vim.opt.splitkeep = "screen"
 vim.opt.signcolumn = "yes"
 vim.opt.list = true
 vim.opt.listchars = {
-	tab = "-> ",
-	trail = "·",
-	nbsp = "␣",
+    tab = "> ",
+    trail = "·",
+    nbsp = "␣",
 }
 
 -- motions for panes

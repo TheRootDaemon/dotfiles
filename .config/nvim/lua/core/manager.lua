@@ -17,7 +17,6 @@ vim.pack.add({
     -- ui
     "https://github.com/nvim-lualine/lualine.nvim",
     "https://github.com/folke/snacks.nvim",
-    "https://github.com/folke/noice.nvim",
     "https://github.com/folke/which-key.nvim",
 
     -- utilities
@@ -29,7 +28,6 @@ vim.pack.add({
     -- transitive dependencies
     "https://github.com/nvim-lua/plenary.nvim",
     "https://github.com/nvim-tree/nvim-web-devicons",
-    "https://github.com/MunifTanjim/nui.nvim",
 })
 
 local plugs = vim.fn.stdpath("config") .. "/lua/plugs"
@@ -39,7 +37,7 @@ if vim.fn.isdirectory(plugs) == 1 then
             local plug = file:match("^(.*)%.lua$")
             local status, error = pcall(require, "plugs." .. plug)
             if not status then
-                vim.notify("Failed to load " .. plug .. ": " .. error)
+                vim.notify("Failed to load " .. plug .. ": " .. error, vim.log.levels.ERROR)
             end
         end
     end
