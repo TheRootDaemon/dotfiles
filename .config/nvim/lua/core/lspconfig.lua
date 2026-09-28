@@ -38,7 +38,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(env)
         local client = vim.lsp.get_client_by_id(env.data.client_id)
         if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_completion) then
-            vim.opt.completeopt = { "menu", "menuone", "noinsert", "fuzzy", "popup" }
+            vim.opt.completeopt = { "menu", "menuone", "noinsert", "fuzzy" }
             vim.lsp.completion.enable(true, client.id, env.buf, { autotrigger = true })
         end
     end,
@@ -46,7 +46,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 -- diagnostics are minimal, since it is extended by a plugin
 vim.diagnostic.config({
-    signs = true,
     severity_sort = true,
+    signs = false,
+
+    float = { border = "rounded" },
     virtual_text = false,
 })

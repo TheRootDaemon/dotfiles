@@ -79,6 +79,10 @@ vim.opt.listchars = {
     nbsp = "␣",
 }
 
+-- use rounded borders
+vim.o.winborder = "rounded"
+vim.o.pumborder = "rounded"
+
 -- motions for panes
 vim.keymap.set("n", "<leader>h", "<C-w>h")
 vim.keymap.set("n", "<leader>j", "<C-w>j")
