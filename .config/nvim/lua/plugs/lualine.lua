@@ -118,12 +118,15 @@ require("lualine").setup({
         section_separators = {},
     },
     sections = {
-        lualine_a = { "mode" },
+        lualine_a = { { "mode", padding = { left = 0, right = 1 } } },
         lualine_b = { "filename", { "branch", icon = "" } },
         lualine_c = { { "diagnostics", symbols = symbols } },
 
         lualine_x = { "diff" },
         lualine_y = { "filetype" },
-        lualine_z = { "location", "progress" },
+        lualine_z = {
+            { "location", padding = { left = 1, right = 0 } },
+            { "progress", padding = { left = 1, right = 0 } },
+        },
     },
 })
