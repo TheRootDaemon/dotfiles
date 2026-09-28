@@ -21,7 +21,6 @@ vim.pack.add({
     "https://github.com/folke/which-key.nvim",
 
     -- utilities
-    "https://github.com/ibhagwan/fzf-lua",
     "https://github.com/lewis6991/gitsigns.nvim",
     "https://github.com/stevearc/oil.nvim",
     { src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
