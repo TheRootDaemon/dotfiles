@@ -11,6 +11,7 @@ vim.pack.add({
     "https://github.com/neovim/nvim-lspconfig",
     "https://github.com/numToStr/Comment.nvim",
     "https://github.com/rachartier/tiny-inline-diagnostic.nvim",
+    "https://github.com/folke/trouble.nvim",
     "https://github.com/stevearc/conform.nvim",
     { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 
