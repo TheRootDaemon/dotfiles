@@ -41,13 +41,6 @@ vim.opt.backup = false
 vim.opt.updatetime = 250
 vim.opt.timeoutlen = 400
 
--- some essentials
-vim.keymap.set("n", "<leader>Q", "<CMD>:q<CR>")
-vim.keymap.set("n", "<leader>q", "<CMD>:q<CR>")
-vim.keymap.set("n", "<leader>wq", "<CMD>:wqa<CR>")
-vim.keymap.set("n", "<leader>s", "<CMD>:source %<CR>")
-vim.keymap.set("n", "<leader>l", "<CMD>:.lua<CR>")
-
 -- clipboard options
 vim.keymap.set("n", "<leader>yy", '"+yy')
 vim.keymap.set("v", "<leader>y", '"+y')
@@ -73,6 +66,7 @@ vim.opt.splitkeep = "screen"
 -- display
 vim.opt.signcolumn = "yes"
 vim.opt.list = true
+vim.opt.fillchars = "eob: "
 vim.opt.listchars = {
     tab = "> ",
     trail = "·",

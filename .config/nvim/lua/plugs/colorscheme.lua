@@ -63,12 +63,3 @@ for _, name in ipairs(transparent_highlight_groups) do
         vim.api.nvim_set_hl(0, name, hl)
     end
 end
-
--- nitpicks
-local line_nr = vim.api.nvim_get_hl(0, { name = "LineNr", link = false })
-local end_of_buffer = vim.api.nvim_get_hl(0, { name = "EndOfBuffer", link = false })
-
-end_of_buffer.fg = line_nr.fg
-end_of_buffer.bold = true
-
-vim.api.nvim_set_hl(0, "EndOfBuffer", end_of_buffer)
