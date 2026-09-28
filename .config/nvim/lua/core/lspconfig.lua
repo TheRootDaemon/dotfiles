@@ -46,9 +46,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 -- diagnostics are minimal, since it is extended by a plugin
 vim.diagnostic.config({
+    float = { border = "rounded" },
     severity_sort = true,
     signs = false,
-
-    float = { border = "rounded" },
     virtual_text = false,
 })

@@ -70,6 +70,14 @@ end
 --- and are replaced with a color that provides sufficient contrast.
 local min_contrast = 3
 
+--- Icons used for LSP diagnostics.
+local symbols = {
+    error = " ",
+    warn = " ",
+    info = " ",
+    hint = " ",
+}
+
 require("lualine").setup({
     options = {
         globalStatus = 3,
@@ -112,7 +120,7 @@ require("lualine").setup({
     sections = {
         lualine_a = { "mode" },
         lualine_b = { "filename", { "branch", icon = "" } },
-        lualine_c = { "diagnostics" },
+        lualine_c = { { "diagnostics", symbols = symbols } },
 
         lualine_x = { "diff" },
         lualine_y = { "filetype" },
