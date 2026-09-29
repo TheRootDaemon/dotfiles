@@ -1,12 +1,15 @@
-require("rose-pine").setup({})
-vim.cmd.colorscheme("rose-pine")
+require("vague").setup({
+    colors = { plus = "#9ccfd8" },
+})
+vim.cmd.colorscheme("vague")
 
 -- keep string literals non-italic
-local string_hl = vim.api.nvim_get_hl(0, { name = "String", link = false })
-string_hl.italic = false
-vim.api.nvim_set_hl(0, "String", string_hl)
+vim.api.nvim_set_hl(0, "String", {
+    italic = false,
+    update = true,
+})
 
--- highlight groups that I like to be italicized
+--- Highlight groups that I like to be italicized.
 local italic_hls = {
     "Comment",
     "@parameter",
@@ -34,21 +37,19 @@ local italic_hls = {
 -- preserve each group's existing style,
 -- then enable italics
 for _, name in ipairs(italic_hls) do
-    local hl = vim.api.nvim_get_hl(0, { name = name, link = false })
-    if hl then
-        hl.italic = true
-        vim.api.nvim_set_hl(0, name, hl)
-    end
+    vim.api.nvim_set_hl(0, name, {
+        italic = true,
+        update = true,
+    })
 end
 
--- highlight groups that I do not like having a background
-local transparent_highlight_groups = {
+--- Highlight groups that I like to be transparent.
+local transparent_hls = {
     "DiagnosticSignError",
     "DiagnosticSignWarn",
     "DiagnosticSignInfo",
     "DiagnosticSignHint",
     "DiagnosticSignOk",
-    "NoiceVirtualText",
     "SignColumn",
     "StatusLine",
     "StatusLineNC",
@@ -56,10 +57,9 @@ local transparent_highlight_groups = {
 
 -- preserve each group's existing style,
 -- then make the background nil
-for _, name in ipairs(transparent_highlight_groups) do
-    local hl = vim.api.nvim_get_hl(0, { name = name, link = false })
-    if hl then
-        hl.bg = nil
-        vim.api.nvim_set_hl(0, name, hl)
-    end
+for _, name in ipairs(transparent_hls) do
+    vim.api.nvim_set_hl(0, name, {
+        bg = "NONE",
+        update = true,
+    })
 end

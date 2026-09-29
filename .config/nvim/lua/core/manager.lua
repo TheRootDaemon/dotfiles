@@ -1,6 +1,6 @@
 vim.pack.add({
     -- colorscheme
-    "https://github.com/rose-pine/neovim",
+    "https://github.com/vague-theme/vague.nvim",
 
     -- completion(s) and autosuggestions
     "https://github.com/L3MON4D3/LuaSnip",
