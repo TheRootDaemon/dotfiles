@@ -42,21 +42,21 @@ vim.opt.updatetime = 250
 vim.opt.timeoutlen = 400
 
 -- clipboard options
-vim.keymap.set("n", "<leader>yy", '"+yy')
-vim.keymap.set("v", "<leader>y", '"+y')
-vim.keymap.set({ "n", "v" }, "<leader>p", '"+p')
+vim.keymap.set("n", "<leader>yy", '"+yy', { desc = "Yank current line to system clipboard" })
+vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank selection to system clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>p", '"+p', { desc = "Paste content from system clipboard" })
 
 -- clear search highlight with <Esc>
-vim.keymap.set("n", "<Esc>", "<CMD>nohlsearch<CR>")
-vim.keymap.set("n", "<leader>f", ":%s/")
+vim.keymap.set("n", "<Esc>", "<CMD>nohlsearch<CR>", { desc = "Clear search highlight" })
+vim.keymap.set("n", "<leader>f", ":%s/", { desc = "Substitute (find/replace)" })
 
 -- move selected lines up and down in visual mode
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
 -- keep cursor centered when navigating search results
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result" })
+vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search result" })
 
 -- splits
 vim.opt.splitbelow = true
@@ -78,16 +78,16 @@ vim.o.winborder = "rounded"
 vim.o.pumborder = "rounded"
 
 -- motions for panes
-vim.keymap.set("n", "<leader>h", "<C-w>h")
-vim.keymap.set("n", "<leader>j", "<C-w>j")
-vim.keymap.set("n", "<leader>k", "<C-w>k")
-vim.keymap.set("n", "<leader>l", "<C-w>l")
+vim.keymap.set("n", "<leader>h", "<C-w>h", { desc = "Navigate to left pane" })
+vim.keymap.set("n", "<leader>j", "<C-w>j", { desc = "Navigate to bottom pane" })
+vim.keymap.set("n", "<leader>k", "<C-w>k", { desc = "Navigate to top pane" })
+vim.keymap.set("n", "<leader>l", "<C-w>l", { desc = "Navigate to right pane" })
 
 -- resize panes
-vim.keymap.set("n", "<leader>H", "<C-w>2>")
-vim.keymap.set("n", "<leader>J", "<C-w>2-")
-vim.keymap.set("n", "<leader>K", "<C-w>2+")
-vim.keymap.set("n", "<leader>L", "<C-w>2<")
+vim.keymap.set("n", "<leader>H", "<C-w>2>", { desc = "Increase pane width" })
+vim.keymap.set("n", "<leader>J", "<C-w>2-", { desc = "Decrease pane height" })
+vim.keymap.set("n", "<leader>K", "<C-w>2+", { desc = "Increase pane height" })
+vim.keymap.set("n", "<leader>L", "<C-w>2<", { desc = "Decrease pane width" })
 
 -- annoying motions
 vim.cmd([[
