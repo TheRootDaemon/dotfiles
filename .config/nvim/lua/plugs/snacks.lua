@@ -2,6 +2,7 @@ local snacks = require("snacks")
 
 snacks.setup({
     animate = { enabled = true },
+    bigfile = { enabled = true },
     indent = { enabled = true },
     picker = {
         enabled = true,
