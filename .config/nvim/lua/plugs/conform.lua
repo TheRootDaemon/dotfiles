@@ -1,11 +1,11 @@
--- controls auto formatting on save
+--- Controls auto formatting on save.
 local format_on_save = true
 
 -- toggles format_on_save
 vim.keymap.set("n", "<leader>tf", function()
     format_on_save = not format_on_save
     vim.notify("Format on save " .. (format_on_save and "enabled" or "disabled"))
-end)
+end, { desc = "Toggle auto formatting for current buffer" })
 
 require("conform").setup({
     formatters_by_ft = {
@@ -29,6 +29,18 @@ require("conform").setup({
         svelte = { "prettier" },
         typescript = { "prettier" },
         yaml = { "prettier" },
+    },
+    formatters = {
+        stylua = {
+            prepend_args = {
+                "--indent-type",
+                "Spaces",
+                "--indent-width",
+                "4",
+                "--column-width",
+                "120",
+            },
+        },
     },
     format_on_save = function()
         if not format_on_save then

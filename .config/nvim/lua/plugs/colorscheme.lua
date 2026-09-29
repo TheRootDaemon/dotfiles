@@ -1,21 +1,73 @@
-require("rose-pine").setup({})
+require("vague").setup({
+    colors = { plus = "#9ccfd8" },
+})
+vim.cmd.colorscheme("vague")
 
-vim.cmd.colorscheme("rose-pine")
-
-vim.api.nvim_set_hl(0, "StatusLine", {
-    bg = "NONE",
+-- keep string literals non-italic
+vim.api.nvim_set_hl(0, "String", {
+    italic = false,
+    update = true,
 })
 
-vim.api.nvim_set_hl(0, "StatusLineNC", {
-    bg = "NONE",
-})
+--- Highlight groups that I like to be italicized.
+local italic_hls = {
+    "Comment",
+    "@parameter",
+    "htmlItalic",
+    "@variable",
+    "@variable.builtin",
+    "@variable.parameter",
+    "@variable.parameter.builtin",
+    "@property",
+    "@markup.italic",
+    "NeogitChangeAdded",
+    "NeogitChangeBothModified",
+    "NeogitChangeCopied",
+    "NeogitChangeDeleted",
+    "CopilotSuggestion",
+    "mkdCode",
+    "NeogitChangeNewFile",
+    "NeogitFilePath",
+    "@text.emphasis",
+    "NeogitChangeModified",
+    "NeogitChangeRenamed",
+    "NeogitChangeUpdated",
+}
 
-vim.api.nvim_set_hl(0, "TreesitterContextBottom", {
-    underline = true,
-    sp = "#9ccfd8",
-})
+-- preserve each group's existing style,
+-- then enable italics
+for _, name in ipairs(italic_hls) do
+    vim.api.nvim_set_hl(0, name, {
+        italic = true,
+        update = true,
+    })
+end
 
-vim.api.nvim_set_hl(0, "TreesitterContextLineNumberBottom", {
-    underline = true,
-    sp = "#9ccfd8",
+--- Highlight groups that I like to be transparent.
+local transparent_hls = {
+    "DiagnosticSignError",
+    "DiagnosticSignWarn",
+    "DiagnosticSignInfo",
+    "DiagnosticSignHint",
+    "DiagnosticSignOk",
+    "SignColumn",
+    "StatusLine",
+    "StatusLineNC",
+    "MsgArea",
+    "MsgSeparator",
+}
+
+-- preserve each group's existing style,
+-- then make the background nil
+for _, name in ipairs(transparent_hls) do
+    vim.api.nvim_set_hl(0, name, {
+        bg = "NONE",
+        update = true,
+    })
+end
+
+-- nitpicks
+vim.api.nvim_set_hl(0, "EndOfBuffer", {
+    bold = true,
+    update = true,
 })

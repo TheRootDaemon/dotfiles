@@ -2,7 +2,12 @@ require("nvim-treesitter").setup({
     auto_install = true,
 })
 
+require("treesitter-context").setup({
+    max_lines = 4,
+})
+
 local ensure_installed = {
+    "regex",
     "bash",
     "c",
     "css",
