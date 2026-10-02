@@ -1,6 +1,7 @@
 add_newline = false 
 
-format = """ $directory$character""" 
+format = """ $directory\
+$character""" 
 
 right_format = """$git_branch\
 $git_state\
@@ -12,7 +13,7 @@ success_symbol = "[➜](bold blue) [:](bold blue)"
 error_symbol = "[➜](bold blue) [✗](bold red)" 
 
 [cmd_duration] 
-min_time = 500 
+min_time = 1000 
 style = "bold yellow"
 format = "took [$duration]($style) "
 
