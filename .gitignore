@@ -2,5 +2,7 @@
 
 .config/opencode/node_modules
 .config/opencode/.ponytail-active
+.config/opencode/package.json
+.config/opencode/package-lock.json
 
 .config/tmux/plugins

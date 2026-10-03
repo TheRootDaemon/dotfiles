@@ -1,16 +1,62 @@
 {
     "$schema": "https://opencode.ai/config.json",
-    "plugin": [
-        "@dietrichgebert/ponytail"
-    ],
+    "plugin": ["@dietrichgebert/ponytail"],
     "permission": {
+        "bash": {
+            "git *": "deny",
+
+            // inspect commits, worktree
+            "git blame *": "allow",
+            "git describe *": "allow",
+            "git diff *": "allow",
+            "git grep *": "allow",
+            "git log *": "allow",
+            "git shortlog *": "allow",
+            "git show *": "allow",
+            "git status *": "allow",
+
+            // inspect local branches, tags
+            "git branch --list *": "allow",
+            "git branch --show-current": "allow",
+            "git tag --list *": "allow",
+
+            // inspect configured remotes
+            "git remote -v": "allow",
+            "git remote get-url *": "allow",
+
+            // inspect reflogs, submodules, worktrees
+            "git reflog *": "allow",
+            "git submodule status *": "allow",
+            "git worktree list": "allow",
+
+            // inspect git's internal object database, references
+            "git cat-file *": "allow",
+            "git for-each-ref *": "allow",
+            "git ls-files *": "allow",
+            "git ls-tree *": "allow",
+            "git rev-list *": "allow",
+            "git rev-parse *": "allow",
+            "git show-ref *": "allow",
+
+            // inspect repository metadata, filesystem state
+            "git check-ignore *": "allow",
+            "git count-objects *": "allow",
+            "git fsck *": "allow",
+            "git merge-tree *": "allow",
+            "git show-branch *": "allow",
+
+            // verify commit, tag, git versions
+            "git verify-commit *": "allow",
+            "git verify-tag *": "allow",
+            "git version": "allow",
+        },
         "skill": {
             "ponytail": "deny",
             "ponytail-audit": "deny",
             "ponytail-debt": "deny",
             "ponytail-gain": "deny",
             "ponytail-help": "deny",
-            "ponytail-review": "deny"
-        }
-    }
+            "ponytail-review": "deny",
+        },
+    },
 }
