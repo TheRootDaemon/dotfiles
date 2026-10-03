@@ -1,6 +1,6 @@
 {
     "$schema": "https://opencode.ai/tui.json",
-    "theme": "rosepine",
+    "theme": "system",
     "cursor": {
         "style": "block",
         "blinking": false,
