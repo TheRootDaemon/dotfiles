@@ -2,16 +2,15 @@ vim.pack.add({
     -- colorscheme
     "https://github.com/vague-theme/vague.nvim",
 
-    -- completion(s) and autosuggestions
+    -- completion and autosuggestions
     "https://github.com/L3MON4D3/LuaSnip",
     "https://github.com/rafamadriz/friendly-snippets",
     { src = "https://github.com/Saghen/blink.cmp", version = vim.version.range("1.*") },
 
-    -- LSP
+    -- LSP stuffs
     "https://github.com/neovim/nvim-lspconfig",
     "https://github.com/numToStr/Comment.nvim",
     "https://github.com/rachartier/tiny-inline-diagnostic.nvim",
-    "https://github.com/folke/trouble.nvim",
     "https://github.com/stevearc/conform.nvim",
     "https://github.com/nvim-treesitter/nvim-treesitter-context",
     { src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
@@ -31,10 +30,14 @@ vim.pack.add({
     "https://github.com/nvim-tree/nvim-web-devicons",
 })
 
+-- load the colorscheme first
+require("plugs.colorscheme")
+
+-- load all the other plugins
 local plugs = vim.fn.stdpath("config") .. "/lua/plugs"
 if vim.fn.isdirectory(plugs) == 1 then
     for _, file in ipairs(vim.fn.readdir(plugs)) do
-        if file:match("%.lua$") then
+        if file:match("%.lua$") and file ~= "colorscheme.lua" then
             local plug = file:match("^(.*)%.lua$")
             local status, error = pcall(require, "plugs." .. plug)
             if not status then

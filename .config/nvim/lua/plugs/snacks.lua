@@ -6,6 +6,24 @@ snacks.setup({
     indent = { enabled = true },
     picker = {
         enabled = true,
+        exclude = {
+            "**/.git/*",
+            "**/node_modules/*",
+            "**/.yarn/cache/*",
+            "**/.yarn/install*",
+            "**/.yarn/releases/*",
+            "**/.pnpm-store/*",
+            "**/.idea/*",
+            "**/.DS_Store",
+            "**/.venv/**",
+            "build/*",
+            "coverage/*",
+            "dist/*",
+            "hodor-types/*",
+            "**/target/*",
+            "**/public/*",
+            "**/.node-gyp/**",
+        },
         sources = {
             files = {
                 hidden = true,
@@ -44,18 +62,18 @@ snacks.setup({
     },
     scroll = {
         enabled = true,
-
         animate = {
             duration = { step = 10, total = 100 },
             easing = "outCubic",
         },
-
         animate_repeat = {
             delay = 50,
             duration = { step = 5, total = 50 },
             easing = "outCubic",
         },
     },
+    statuscolumn = { enabled = true },
+    words = { enabled = true },
 })
 
 vim.keymap.set("n", "<leader><leader>", function()

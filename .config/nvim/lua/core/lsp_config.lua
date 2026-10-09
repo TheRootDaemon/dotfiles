@@ -44,10 +44,18 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end,
 })
 
+--- Icons used for LSP diagnostics.
+local signs = {
+    [vim.diagnostic.severity.ERROR] = " ",
+    [vim.diagnostic.severity.WARN] = " ",
+    [vim.diagnostic.severity.INFO] = " ",
+    [vim.diagnostic.severity.HINT] = " ",
+}
+
 -- diagnostics are minimal, since it is extended by a plugin
 vim.diagnostic.config({
     float = { border = "rounded" },
     severity_sort = true,
-    signs = false,
+    signs = { text = signs },
     virtual_text = false,
 })

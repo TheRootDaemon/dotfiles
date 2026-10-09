@@ -39,7 +39,7 @@ vim.opt.backup = false
 
 -- responsiveness
 vim.opt.updatetime = 250
-vim.opt.timeoutlen = 400
+vim.opt.timeoutlen = 300
 
 -- clipboard options
 vim.keymap.set("n", "<leader>yy", '"+yy', { desc = "Yank current line to system clipboard" })
@@ -64,7 +64,7 @@ vim.opt.splitright = true
 vim.opt.splitkeep = "screen"
 
 -- display
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "yes:2"
 vim.opt.list = true
 vim.opt.listchars = {
     tab = "> ",
