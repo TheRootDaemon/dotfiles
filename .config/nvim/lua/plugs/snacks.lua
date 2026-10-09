@@ -6,6 +6,24 @@ snacks.setup({
     indent = { enabled = true },
     picker = {
         enabled = true,
+        exclude = {
+            "**/.git/*",
+            "**/node_modules/*",
+            "**/.yarn/cache/*",
+            "**/.yarn/install*",
+            "**/.yarn/releases/*",
+            "**/.pnpm-store/*",
+            "**/.idea/*",
+            "**/.DS_Store",
+            "**/.venv/**",
+            "build/*",
+            "coverage/*",
+            "dist/*",
+            "hodor-types/*",
+            "**/target/*",
+            "**/public/*",
+            "**/.node-gyp/**",
+        },
         sources = {
             files = {
                 hidden = true,

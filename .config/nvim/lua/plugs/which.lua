@@ -1,6 +1,7 @@
 local which_key = require("which-key")
 
 which_key.setup({
+    delay = 2000,
     preset = "helix",
 })
 
