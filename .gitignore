@@ -1,5 +1,6 @@
 .config/nvim/nvim-pack-lock.json
 
+.config/opencode/service.json
 .config/opencode/node_modules
 .config/opencode/.ponytail-active
 .config/opencode/package.json

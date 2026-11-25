@@ -1,62 +1,116 @@
 {
     "$schema": "https://opencode.ai/config.json",
-    "plugin": ["@dietrichgebert/ponytail"],
-    "permission": {
-        "bash": {
-            "git *": "deny",
+    "plugins": ["@dietrichgebert/ponytail"],
+    "permissions": [
+        { "action": "external_directory", "resource": "*", "effect": "ask" },
 
-            // inspect commits, worktree
-            "git blame *": "allow",
-            "git describe *": "allow",
-            "git diff *": "allow",
-            "git grep *": "allow",
-            "git log *": "allow",
-            "git shortlog *": "allow",
-            "git show *": "allow",
-            "git status *": "allow",
+        // deny all the git commands,
+        // allows only the read-only actions below
+        { "action": "shell", "resource": "git *", "effect": "deny" },
 
-            // inspect local branches, tags
-            "git branch --list *": "allow",
-            "git branch --show-current": "allow",
-            "git tag --list *": "allow",
+        // inspect commits, worktree
+        { "action": "shell", "resource": "git blame *", "effect": "allow" },
+        { "action": "shell", "resource": "git describe *", "effect": "allow" },
+        { "action": "shell", "resource": "git diff *", "effect": "allow" },
+        { "action": "shell", "resource": "git grep *", "effect": "allow" },
+        { "action": "shell", "resource": "git log *", "effect": "allow" },
+        { "action": "shell", "resource": "git shortlog *", "effect": "allow" },
+        { "action": "shell", "resource": "git show *", "effect": "allow" },
+        { "action": "shell", "resource": "git status *", "effect": "allow" },
 
-            // inspect configured remotes
-            "git remote -v": "allow",
-            "git remote get-url *": "allow",
-
-            // inspect reflogs, submodules, worktrees
-            "git reflog *": "allow",
-            "git submodule status *": "allow",
-            "git worktree list": "allow",
-
-            // inspect git's internal object database, references
-            "git cat-file *": "allow",
-            "git for-each-ref *": "allow",
-            "git ls-files *": "allow",
-            "git ls-tree *": "allow",
-            "git rev-list *": "allow",
-            "git rev-parse *": "allow",
-            "git show-ref *": "allow",
-
-            // inspect repository metadata, filesystem state
-            "git check-ignore *": "allow",
-            "git count-objects *": "allow",
-            "git fsck *": "allow",
-            "git merge-tree *": "allow",
-            "git show-branch *": "allow",
-
-            // verify commit, tag, git versions
-            "git verify-commit *": "allow",
-            "git verify-tag *": "allow",
-            "git version": "allow",
+        // inspect local branches, tags
+        {
+            "action": "shell",
+            "resource": "git branch --list *",
+            "effect": "allow",
         },
-        "skill": {
-            "ponytail": "deny",
-            "ponytail-audit": "deny",
-            "ponytail-debt": "deny",
-            "ponytail-gain": "deny",
-            "ponytail-help": "deny",
-            "ponytail-review": "deny",
+        {
+            "action": "shell",
+            "resource": "git branch --show-current",
+            "effect": "allow",
         },
-    },
+        {
+            "action": "shell",
+            "resource": "git tag --list *",
+            "effect": "allow",
+        },
+
+        // inspect configured remotes
+        { "action": "shell", "resource": "git remote -v", "effect": "allow" },
+        {
+            "action": "shell",
+            "resource": "git remote get-url *",
+            "effect": "allow",
+        },
+
+        // inspect reflogs, submodules, worktrees
+        { "action": "shell", "resource": "git reflog *", "effect": "allow" },
+        {
+            "action": "shell",
+            "resource": "git submodule status *",
+            "effect": "allow",
+        },
+        {
+            "action": "shell",
+            "resource": "git worktree list",
+            "effect": "allow",
+        },
+
+        // inspect git's internal object database, references
+        { "action": "shell", "resource": "git cat-file *", "effect": "allow" },
+        {
+            "action": "shell",
+            "resource": "git for-each-ref *",
+            "effect": "allow",
+        },
+        { "action": "shell", "resource": "git ls-files *", "effect": "allow" },
+        { "action": "shell", "resource": "git ls-tree *", "effect": "allow" },
+        { "action": "shell", "resource": "git rev-list *", "effect": "allow" },
+        { "action": "shell", "resource": "git rev-parse *", "effect": "allow" },
+        { "action": "shell", "resource": "git show-ref *", "effect": "allow" },
+
+        // inspect repository metadata, filesystem state
+        {
+            "action": "shell",
+            "resource": "git check-ignore *",
+            "effect": "allow",
+        },
+        {
+            "action": "shell",
+            "resource": "git count-objects *",
+            "effect": "allow",
+        },
+        { "action": "shell", "resource": "git fsck *", "effect": "allow" },
+        {
+            "action": "shell",
+            "resource": "git merge-tree *",
+            "effect": "allow",
+        },
+        {
+            "action": "shell",
+            "resource": "git show-branch *",
+            "effect": "allow",
+        },
+
+        // verify commit, tag, git versions
+        {
+            "action": "shell",
+            "resource": "git verify-commit *",
+            "effect": "allow",
+        },
+        {
+            "action": "shell",
+            "resource": "git verify-tag *",
+            "effect": "allow",
+        },
+        { "action": "shell", "resource": "git version", "effect": "allow" },
+
+        { "action": "skill", "resource": "ponytail", "effect": "deny" },
+        { "action": "skill", "resource": "ponytail-audit", "effect": "deny" },
+        { "action": "skill", "resource": "ponytail-debt", "effect": "deny" },
+        { "action": "skill", "resource": "ponytail-gain", "effect": "deny" },
+        { "action": "skill", "resource": "ponytail-help", "effect": "deny" },
+        { "action": "skill", "resource": "ponytail-review", "effect": "deny" },
+    ],
+    "experimental": { "todo": true },
 }

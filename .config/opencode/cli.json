@@ -1,0 +1,10 @@
+{
+    "$schema": "https://opencode.ai/v2/cli.json",
+    "theme": {
+        "name": "vague"
+    },
+    "cursor": {
+        "style": "block",
+        "blinking": false
+    }
+}
